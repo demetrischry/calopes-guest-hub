@@ -1,0 +1,32 @@
+{
+    "name": "Calopes Suites Guest Hub",
+    "short_name": "Calopes",
+    "description": "Official Guest Hub for Calopes Suites",
+
+    "start_url": "./",
+
+    "display": "standalone",
+
+    "background_color": "#F7F2EB",
+
+    "theme_color": "#7A6A58",
+
+    "orientation": "portrait",
+
+    "icons": [
+
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+
+    ]
+
+}
