@@ -170,6 +170,7 @@ menu.addEventListener("keydown", function (event) {
 
 });
 
+/*
 if ("serviceWorker" in navigator) {
 
     window.addEventListener("load", function () {
@@ -191,5 +192,6 @@ if ("serviceWorker" in navigator) {
             });
 
     });
-
 }
+*/
+

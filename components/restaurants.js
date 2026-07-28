@@ -1,14 +1,25 @@
 function createRestaurantsPage() {
 
+    let topPicksHTML = "";
     let kallepeiaHTML = "";
     let nearbyHTML = "";
     let paphosHTML = "";
+    let specialHTML = "";
 
     restaurantsData.forEach(function (restaurant) {
 
         const card = createPlaceCard(restaurant);
 
-        if (restaurant.category === "kallepeia") {
+        /*
+            Τα Top Picks εμφανίζονται μόνο
+            στην πρώτη κατηγορία.
+        */
+
+        if (restaurant.topPick === true) {
+
+            topPicksHTML += card;
+
+        } else if (restaurant.category === "kallepeia") {
 
             kallepeiaHTML += card;
 
@@ -20,6 +31,10 @@ function createRestaurantsPage() {
 
             paphosHTML += card;
 
+        } else if (restaurant.category === "special") {
+
+            specialHTML += card;
+
         }
 
     });
@@ -28,7 +43,7 @@ function createRestaurantsPage() {
 
         <section class="welcome-card restaurants-page">
 
-            <button id="back-button" class="back-button">
+            <button id="back-button">
 
                 <i data-lucide="arrow-left"></i>
 
@@ -39,22 +54,56 @@ function createRestaurantsPage() {
             <header class="page-intro">
 
                 <span class="page-eyebrow">
-
                     Calopes Suites Local Guide
-
                 </span>
 
-                <h2>Restaurants</h2>
+                <h2>Eat Like a Local</h2>
 
                 <p>
-
-                    Discover some of our favourite places to eat,
-                    from traditional village taverns to restaurants
-                    around Paphos.
-
+                    Discover our favourite places to enjoy authentic
+                    Cypriot flavours, welcoming village taverns and
+                    memorable dining experiences around Kallepeia
+                    and Paphos.
                 </p>
 
             </header>
+
+
+            ${topPicksHTML ? `
+
+                <section class="restaurant-category">
+
+                    <div class="category-heading">
+
+                        <div class="category-icon">
+
+                            <i data-lucide="heart"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Calopes Top Picks</h3>
+
+                            <p>
+                                The restaurants we most enjoy recommending
+                                to our guests.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="restaurant-grid">
+
+                        ${topPicksHTML}
+
+                    </div>
+
+                </section>
+
+            ` : ""}
+
 
             ${kallepeiaHTML ? `
 
@@ -73,9 +122,8 @@ function createRestaurantsPage() {
                             <h3>In Kallepeia</h3>
 
                             <p>
-
-                                Authentic local taverns close to Calopes Suites.
-
+                                Local food and relaxed dining just minutes
+                                from Calopes Suites.
                             </p>
 
                         </div>
@@ -91,6 +139,7 @@ function createRestaurantsPage() {
                 </section>
 
             ` : ""}
+
 
             ${nearbyHTML ? `
 
@@ -109,9 +158,8 @@ function createRestaurantsPage() {
                             <h3>Nearby Villages</h3>
 
                             <p>
-
-                                Traditional restaurants just a short drive away.
-
+                                Traditional restaurants in the villages
+                                surrounding Kallepeia.
                             </p>
 
                         </div>
@@ -128,6 +176,7 @@ function createRestaurantsPage() {
 
             ` : ""}
 
+
             ${paphosHTML ? `
 
                 <section class="restaurant-category">
@@ -136,7 +185,7 @@ function createRestaurantsPage() {
 
                         <div class="category-icon">
 
-                            <i data-lucide="waves"></i>
+                            <i data-lucide="building-2"></i>
 
                         </div>
 
@@ -145,9 +194,8 @@ function createRestaurantsPage() {
                             <h3>Paphos</h3>
 
                             <p>
-
-                                Seaside dining and popular restaurants in Paphos.
-
+                                Selected restaurants for a day or evening
+                                in Paphos.
                             </p>
 
                         </div>
@@ -157,6 +205,42 @@ function createRestaurantsPage() {
                     <div class="restaurant-grid">
 
                         ${paphosHTML}
+
+                    </div>
+
+                </section>
+
+            ` : ""}
+
+
+            ${specialHTML ? `
+
+                <section class="restaurant-category">
+
+                    <div class="category-heading">
+
+                        <div class="category-icon">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Special Dining</h3>
+
+                            <p>
+                                Beautiful settings and memorable choices
+                                for a special meal.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="restaurant-grid">
+
+                        ${specialHTML}
 
                     </div>
 

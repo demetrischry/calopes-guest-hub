@@ -16,11 +16,26 @@ function createPlaceCard(place) {
                     "
                 >
 
+                ${place.topPick ? `
+
+                    <span class="top-pick-badge">
+
+                        <i data-lucide="award"></i>
+
+                        Calopes Pick
+
+                    </span>
+
+                ` : ""}
+
                 ${place.rating ? `
 
                     <span class="restaurant-rating">
+
                         <i data-lucide="star"></i>
+
                         ${place.rating}
+
                     </span>
 
                 ` : ""}
@@ -28,8 +43,11 @@ function createPlaceCard(place) {
                 ${place.distance ? `
 
                     <span class="restaurant-distance">
-                        <i data-lucide="clock-3"></i>
+
+                        <i data-lucide="car"></i>
+
                         ${place.distance}
+
                     </span>
 
                 ` : ""}
@@ -38,29 +56,45 @@ function createPlaceCard(place) {
 
             <div class="restaurant-content">
 
+                ${place.badge ? `
+
+                    <span class="place-badge">
+                        ${place.badge}
+                    </span>
+
+                ` : ""}
+
                 <h3 class="restaurant-name">
                     ${place.name}
                 </h3>
 
-                ${place.location ? `
+                <div class="restaurant-details">
 
-                    <div class="restaurant-location">
+                    ${place.location ? `
 
-                        <i data-lucide="map-pin"></i>
+                        <span>
 
-                        <span>${place.location}</span>
+                            <i data-lucide="map-pin"></i>
 
-                    </div>
+                            ${place.location}
 
-                ` : ""}
+                        </span>
 
-                ${place.cuisine ? `
+                    ` : ""}
 
-                    <p class="restaurant-cuisine">
-                        ${place.cuisine}
-                    </p>
+                    ${place.cuisine ? `
 
-                ` : ""}
+                        <span>
+
+                            <i data-lucide="utensils"></i>
+
+                            ${place.cuisine}
+
+                        </span>
+
+                    ` : ""}
+
+                </div>
 
                 ${place.description ? `
 
@@ -70,27 +104,25 @@ function createPlaceCard(place) {
 
                 ` : ""}
 
-   
+                ${place.recommendation ? `
 
-            ${place.recommendation ? `
+                    <div class="recommendation-box">
 
-            <div class="recommendation-box">
+                        <div class="recommendation-title">
 
-                <div class="recommendation-title">
+                            <i data-lucide="sparkles"></i>
 
-                    <i data-lucide="sparkles"></i>
+                            <span>Why We Love It</span>
 
-                    <span>Recommended by Calopes Suites</span>
+                        </div>
 
-                </div>
+                        <p>
+                            ${place.recommendation}
+                        </p>
 
-                <p>
-                    ${place.recommendation}
-                </p>
+                    </div>
 
-            </div>
-
-        ` : ""}
+                ` : ""}
 
                 <div class="restaurant-buttons">
 
@@ -102,8 +134,11 @@ function createPlaceCard(place) {
                             rel="noopener noreferrer"
                             class="restaurant-button restaurant-button-primary"
                         >
+
                             <i data-lucide="navigation"></i>
-                            Navigate
+
+                            Directions
+
                         </a>
 
                     ` : ""}
@@ -114,8 +149,11 @@ function createPlaceCard(place) {
                             href="tel:${place.phone}"
                             class="restaurant-button restaurant-button-secondary"
                         >
+
                             <i data-lucide="phone"></i>
+
                             Call
+
                         </a>
 
                     ` : ""}
@@ -128,8 +166,11 @@ function createPlaceCard(place) {
                             rel="noopener noreferrer"
                             class="restaurant-button restaurant-button-secondary"
                         >
+
                             <i data-lucide="globe"></i>
+
                             Website
+
                         </a>
 
                     ` : ""}

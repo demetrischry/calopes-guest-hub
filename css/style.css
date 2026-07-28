@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ==========================
-   CSS VARIABLES
+   DESIGN TOKENS
 ========================== */
 :root {
     --background-color: #F8F5F0;
@@ -13,86 +13,189 @@
     --secondary-color: #A38B6D;
     --text-color: #3D352E;
     --text-light: #7E746C;
+    --soft-surface: #F2ECE4;
+    --soft-surface-light: #F7F2EB;
+    --border-color: rgba(61, 53, 46, 0.10);
     --border-radius: 18px;
     --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 10px 28px rgba(61, 53, 46, 0.09);
 }
 
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-img { max-width: 100%; }
+/* ==========================
+   RESET & BASE
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* BODY & APP */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    min-height: 100vh;
     background: var(--background-color);
-    font-family: 'Inter', sans-serif;
     color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+a:active,
+button:active {
+    transform: scale(0.98);
+}
+
+button {
+    font: inherit;
+}
+
 .app {
     width: 100%;
     max-width: 480px;
     min-height: 100vh;
     margin: 0 auto;
 }
-.content { padding: 25px; }
 
-/* HERO */
+.content {
+    padding: 25px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================
+   HERO
+========================== */
 .hero {
     position: relative;
     height: 320px;
     overflow: hidden;
     border-radius: 0 0 30px 30px;
 }
+
 .hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
+
 .hero::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.15));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15));
 }
+
 .hero-overlay {
     position: absolute;
-    left: 0;
     right: 0;
     bottom: 30px;
+    left: 0;
     z-index: 2;
     padding: 20px;
+    color: #FFFFFF;
     text-align: center;
-    color: white;
 }
+
 .hero h1 {
     margin-bottom: 5px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
     font-weight: 700;
 }
-.hero p { margin-bottom: 10px; font-size: 20px; opacity: .95; }
-.hero span { font-size: 15px; opacity: .9; }
 
-/* WELCOME CARD */
+.hero p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    opacity: 0.95;
+}
+
+.hero span {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* ==========================
+   WELCOME & PAGE SHELL
+========================== */
 .welcome-card {
     padding: 28px;
     background: var(--card-color);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 }
+
 .welcome-card h2 {
     margin-bottom: 12px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 34px;
 }
+
 .welcome-card p {
     color: var(--text-light);
     font-size: 15px;
     line-height: 1.8;
 }
 
-/* MENU */
-.menu { margin-top: 25px; }
+#page-container {
+    margin-top: 20px;
+}
+
+#back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#back-button:hover {
+    opacity: 0.9;
+}
+
+#back-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+#back-button:focus-visible,
+.contact-button:focus-visible,
+.restaurant-button:focus-visible,
+.review-main-button:focus-visible,
+#copy-password-button:focus-visible {
+    outline: 3px solid rgba(122, 106, 88, 0.35);
+    outline-offset: 3px;
+}
+
+/* ==========================
+   HOME MENU
+========================== */
+.menu {
+    margin-top: 25px;
+}
+
 .menu-card {
     display: flex;
     align-items: center;
@@ -103,14 +206,18 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     cursor: pointer;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
 }
-.menu-card:hover { transform: translateY(-4px); }
-.menu-card:active { transform: scale(.98); }
+
+.menu-card:hover {
+    transform: translateY(-4px);
+}
+
 .menu-card:focus-visible {
     outline: 3px solid var(--primary-color);
     outline-offset: 4px;
 }
+
 .menu-icon {
     display: flex;
     align-items: center;
@@ -118,47 +225,55 @@ body {
     width: 58px;
     height: 58px;
     flex-shrink: 0;
-    background: #F2ECE4;
+    background: var(--soft-surface);
     border-radius: 16px;
     font-size: 28px;
 }
-.menu-icon svg { width: 26px; height: 26px; stroke-width: 1.8; }
-.menu-text { flex: 1; min-width: 0; }
-.menu-text h3 { margin-bottom: 4px; font-size: 20px; }
-.menu-text p { color: var(--text-light); font-size: 14px; }
-.menu-arrow { color: var(--primary-color); font-size: 24px; }
 
-/* PAGE CONTAINER & BUTTONS */
-#page-container { margin-top: 20px; }
-#back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin-bottom: 20px;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 12px;
-    background: var(--primary-color);
-    color: white;
-    cursor: pointer;
-    font: inherit;
+.menu-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke-width: 1.8;
 }
-#back-button:hover { opacity: .9; }
-#back-button svg { width: 18px; height: 18px; }
 
-/* UTILITIES */
-.hidden { display: none; }
+.menu-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.menu-text h3 {
+    margin-bottom: 4px;
+    font-size: 20px;
+}
+
+.menu-text p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.menu-arrow {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+/* ==========================
+   WIFI
+========================== */
 #copy-password-button {
     margin-top: 10px;
     padding: 12px 18px;
-    border: none;
+    border: 0;
     border-radius: 12px;
     background: var(--primary-color);
-    color: white;
+    color: #FFFFFF;
     font-size: 15px;
     cursor: pointer;
 }
-#copy-password-button:hover { opacity: .9; }
+
+#copy-password-button:hover {
+    opacity: 0.9;
+}
+
 #copy-message {
     min-height: 24px;
     margin-top: 10px;
@@ -166,62 +281,18 @@ body {
     font-weight: 600;
 }
 
-/* BEACHES & PLACES */
-.beach-card,
-.place-card {
-    margin-top: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-    transition: transform .25s ease, box-shadow .25s ease;
+/* ==========================
+   SHARED PAGE INTRO
+========================== */
+.restaurants-page {
+    padding: 24px;
 }
-.beach-card:hover,
-.place-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 28px rgba(0,0,0,.12);
-}
-.beach-card h3,
-.place-card h3 { margin-bottom: 12px; }
-.beach-card p,
-.place-card p { margin: 8px 0; color: #555; }
 
-/* CONTACT */
-.contact-info { margin-top: 20px; }
-.contact-info p { margin: 15px 0; font-size: 17px; }
-.contact-actions { display: grid; gap: 12px; margin-top: 24px; }
-.contact-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 18px;
-    border-radius: 12px;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform .2s ease, opacity .2s ease;
+.page-intro {
+    margin-top: 18px;
+    margin-bottom: 38px;
 }
-.contact-button:hover { transform: translateY(-2px); opacity: .9; }
-.contact-button svg { width: 20px; height: 20px; }
 
-/* REVIEW */
-.review-button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 24px;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 600;
-}
-.review-button:hover { opacity: .9; }
-
-/* RESTAURANTS PAGE */
-.restaurants-page { padding: 24px; }
-.page-intro { margin-top: 18px; margin-bottom: 38px; }
 .page-eyebrow {
     display: block;
     margin-bottom: 8px;
@@ -231,7 +302,13 @@ body {
     letter-spacing: 1.4px;
     text-transform: uppercase;
 }
-.page-intro h2 { margin: 0 0 12px; font-size: 36px; line-height: 1.1; }
+
+.page-intro h2 {
+    margin: 0 0 12px;
+    font-size: 36px;
+    line-height: 1.1;
+}
+
 .page-intro p {
     max-width: 100%;
     margin: 0;
@@ -239,13 +316,18 @@ body {
     font-size: 15px;
     line-height: 1.7;
 }
-.restaurant-category { margin-top: 40px; }
+
+.restaurant-category {
+    margin-top: 42px;
+}
+
 .category-heading {
     display: flex;
     align-items: flex-start;
     gap: 14px;
     margin-bottom: 18px;
 }
+
 .category-icon {
     display: flex;
     align-items: center;
@@ -253,12 +335,21 @@ body {
     width: 44px;
     height: 44px;
     flex-shrink: 0;
-    background: #F2ECE4;
+    background: var(--soft-surface);
     color: var(--primary-color);
     border-radius: 14px;
 }
-.category-icon svg { width: 21px; height: 21px; }
-.category-heading h3 { margin: 0 0 4px; font-size: 22px; }
+
+.category-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.category-heading h3 {
+    margin: 0 0 4px;
+    font-size: 22px;
+}
+
 .category-heading p {
     margin: 0;
     color: var(--text-light);
@@ -266,21 +357,34 @@ body {
     line-height: 1.5;
 }
 
-/* RESTAURANT CARDS — ONE CLEAN VERSION */
+/* ==========================
+   SHARED PLACE CARDS
+   Used by Restaurants, Beaches and Places
+========================== */
 .restaurant-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
 }
+
 .restaurant-card {
     width: 100%;
     min-width: 0;
     overflow: hidden;
-    background: #fff;
-    border: 1px solid rgba(61,53,46,.08);
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
     border-radius: 22px;
-    box-shadow: 0 10px 28px rgba(61,53,46,.09);
+    box-shadow: var(--shadow-card);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(61, 53, 46, 0.13);
+}
+
 .restaurant-image-wrapper {
     position: relative;
     width: 100%;
@@ -288,55 +392,140 @@ body {
     overflow: hidden;
     background: #ECE7E0;
 }
+
 .restaurant-image {
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
+    transition: transform 0.4s ease;
 }
-.restaurant-rating,
-.restaurant-distance {
+
+.restaurant-card:hover .restaurant-image {
+    transform: scale(1.03);
+}
+
+/* Calopes Pick: left side */
+.top-pick-badge {
     position: absolute;
     top: 14px;
+    left: 14px;
+    z-index: 4;
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    width: auto;
+    max-width: calc(100% - 120px);
     padding: 8px 11px;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+.top-pick-badge svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+/* Rating and distance: compact pills on the right */
+.restaurant-rating,
+.restaurant-distance {
+    position: absolute;
+    right: 14px;
+    left: auto;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    max-width: max-content;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #2D2925;
     border-radius: 999px;
     font-size: 13px;
     font-weight: 700;
     line-height: 1;
-    box-shadow: 0 4px 12px rgba(0,0,0,.14);
-}
-.restaurant-rating {
-    left: 14px;
-    background: #F5C842;
-    color: #2D2925;
-}
-.restaurant-distance {
-    right: 14px;
-    background: rgba(255,255,255,.94);
-    color: var(--text-color);
+    white-space: nowrap;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(8px);
 }
+
+.restaurant-rating {
+    top: 14px;
+}
+
+.restaurant-distance {
+    top: 56px;
+}
+
 .restaurant-rating svg,
 .restaurant-distance svg {
     width: 15px;
     height: 15px;
     flex-shrink: 0;
 }
-.restaurant-rating svg { fill: currentColor; }
-.restaurant-content { padding: 22px; }
+
+.restaurant-rating svg {
+    color: #F4B400;
+    fill: currentColor;
+}
+
+.restaurant-content {
+    padding: 22px;
+}
+
+.place-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 7px 11px;
+    background: var(--soft-surface);
+    color: var(--primary-color);
+    border: 1px solid rgba(122, 106, 88, 0.14);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
 .restaurant-name {
-    margin: 0 0 11px;
+    margin: 0 0 14px;
     color: var(--text-color);
     font-family: 'Cormorant Garamond', serif;
     font-size: 29px;
     font-weight: 700;
     line-height: 1.1;
-    overflow-wrap: normal;
-    word-break: normal;
+    overflow-wrap: anywhere;
 }
+
+.restaurant-details {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.restaurant-details span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.restaurant-details svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    color: var(--primary-color);
+}
+
+/* Backward compatibility if an older component still uses these classes */
 .restaurant-location {
     display: flex;
     align-items: center;
@@ -346,29 +535,65 @@ body {
     font-size: 14px;
     font-weight: 600;
 }
+
 .restaurant-location svg {
     width: 17px;
     height: 17px;
     flex-shrink: 0;
 }
+
 .restaurant-cuisine {
     margin: 0 0 14px;
     color: var(--text-light);
     font-size: 14px;
     line-height: 1.5;
 }
+
 .restaurant-description {
     margin: 0;
     color: #554C44;
     font-size: 15px;
     line-height: 1.7;
 }
+
+.recommendation-box {
+    margin-top: 18px;
+    padding: 15px 16px;
+    background: var(--soft-surface-light);
+    border: 1px solid rgba(122, 106, 88, 0.14);
+    border-radius: 14px;
+}
+
+.recommendation-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.recommendation-title svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+.recommendation-box p {
+    margin: 0;
+    color: #665C53;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 .restaurant-buttons {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
     margin-top: 22px;
 }
+
 .restaurant-button {
     display: inline-flex;
     align-items: center;
@@ -378,148 +603,65 @@ body {
     padding: 12px 16px;
     border-radius: 13px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
-    transition: transform .2s ease, opacity .2s ease;
 }
-.restaurant-button:hover { transform: translateY(-2px); }
-.restaurant-button svg { width: 18px; height: 18px; }
+
+.restaurant-button:hover {
+    transform: translateY(-2px);
+}
+
+.restaurant-button svg {
+    width: 18px;
+    height: 18px;
+}
+
 .restaurant-button-primary {
     background: var(--primary-color);
-    color: white;
+    color: #FFFFFF;
 }
+
 .restaurant-button-secondary {
     background: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
 }
 
-/* RESPONSIVE */
-@media (min-width: 420px) {
-    .restaurant-buttons {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-@media (max-width: 380px) {
-    .content { padding: 16px; }
-    .welcome-card,
-    .restaurants-page { padding: 20px; }
-
-    .restaurant-rating,
-    .restaurant-distance {
-        top: 10px;
-        padding: 7px 9px;
-        font-size: 12px;
-    }
-    .restaurant-rating { left: 10px; }
-    .restaurant-distance { right: 10px; }
-    .restaurant-name { font-size: 26px; }
-}
-
-.recommendation-box {
-
+/* ==========================
+   CONTACT
+========================== */
+.contact-info {
     margin-top: 20px;
-
-    padding: 16px 18px;
-
-    background: #F7F2EB;
-
-    border: 1px solid rgba(122, 106, 88, 0.14);
-
-    border-radius: 14px;
-
 }
 
-.recommendation-title {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 7px;
-
-    color: var(--primary-color);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    letter-spacing: 0.2px;
-
+.contact-info p {
+    margin: 15px 0;
+    font-size: 17px;
 }
 
-.recommendation-title svg {
-
-    width: 17px;
-
-    height: 17px;
-
-    flex-shrink: 0;
-
-}
-
-.recommendation-box p {
-
-    margin: 0;
-
-    color: #665C53;
-
-    font-size: 14px;
-
-    line-height: 1.65;
-
-}
-
-.contact-premium-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    margin-bottom: 22px;
-    padding: 18px;
-
-    background: #F7F2EB;
-    border: 1px solid rgba(122, 106, 88, 0.12);
-    border-radius: 16px;
-}
-
-.contact-premium-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 48px;
-    height: 48px;
-
-    flex-shrink: 0;
-
-    background: var(--primary-color);
-    color: white;
-
-    border-radius: 14px;
-}
-
-.contact-premium-icon svg {
-    width: 22px;
-    height: 22px;
-}
-
-.contact-premium-card h3 {
-    margin: 0 0 4px;
-    font-size: 18px;
-}
-
-.contact-premium-card p {
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.5;
+.contact-actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
 }
 
 .contact-button {
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
+    gap: 10px;
+    padding: 14px 18px;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border-radius: 12px;
     text-align: left;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .contact-button > svg {
@@ -530,9 +672,9 @@ body {
 
 .contact-button span {
     display: flex;
+    min-width: 0;
     flex-direction: column;
     gap: 3px;
-    min-width: 0;
 }
 
 .contact-button strong {
@@ -546,123 +688,133 @@ body {
     opacity: 0.85;
 }
 
-/* CONTACT EXTRA */
+.contact-premium-card,
+.contact-info-box,
+.contact-hours {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    background: var(--soft-surface-light);
+    border: 1px solid rgba(122, 106, 88, 0.12);
+    border-radius: 16px;
+}
+
+.contact-premium-card {
+    margin-bottom: 22px;
+}
 
 .contact-info-box,
-.contact-hours{
+.contact-hours {
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 22px;
+    padding: 22px;
+    border-radius: 18px;
+}
 
-    display:flex;
-
-    gap:18px;
-
-    margin-top:22px;
-
-    padding:22px;
-
-    background:#F7F2EB;
-
-    border-radius:18px;
-
-    border:1px solid rgba(122,106,88,.12);
-
+.contact-premium-icon,
+.contact-info-icon,
+.contact-hours-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border-radius: 14px;
 }
 
 .contact-info-icon,
-.contact-hours-icon{
+.contact-hours-icon {
+    width: 52px;
+    height: 52px;
+}
 
-    width:52px;
-
-    height:52px;
-
-    flex-shrink:0;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:var(--primary-color);
-
-    color:white;
-
-    border-radius:14px;
-
+.contact-premium-icon svg {
+    width: 22px;
+    height: 22px;
 }
 
 .contact-info-icon svg,
-.contact-hours-icon svg{
+.contact-hours-icon svg {
+    width: 24px;
+    height: 24px;
+}
 
-    width:24px;
-
-    height:24px;
-
+.contact-premium-card h3 {
+    margin: 0 0 4px;
+    font-size: 18px;
 }
 
 .contact-info-box h3,
-.contact-hours h3{
+.contact-hours h3 {
+    margin-bottom: 8px;
+    font-size: 19px;
+}
 
-    margin-bottom:8px;
-
-    font-size:19px;
-
+.contact-premium-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .contact-info-box p,
-.contact-hours p{
-
-    color:var(--text-light);
-
-    line-height:1.7;
-
+.contact-hours p {
+    color: var(--text-light);
+    line-height: 1.7;
 }
+
 .contact-closing-message {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-
     margin-top: 24px;
     padding: 18px 20px;
-
-    background: transparent;
-
-    border-top: 1px solid rgba(122, 106, 88, 0.18);
-
     color: var(--primary-color);
+    border-top: 1px solid rgba(122, 106, 88, 0.18);
 }
 
 .contact-closing-message svg {
     width: 19px;
     height: 19px;
-
     flex-shrink: 0;
-
     margin-top: 3px;
 }
 
 .contact-closing-message p {
     margin: 0;
-
     color: var(--text-light);
-
     font-size: 14px;
-    line-height: 1.7;
-
     font-style: italic;
+    line-height: 1.7;
 }
 
 /* ==========================
    REVIEW PAGE
 ========================== */
+.review-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 24px;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.review-button:hover {
+    opacity: 0.9;
+}
 
 .review-premium-card {
     padding: 28px 22px;
-
-    background: #F7F2EB;
-
+    background: var(--soft-surface-light);
     border: 1px solid rgba(122, 106, 88, 0.14);
     border-radius: 20px;
-
     text-align: center;
 }
 
@@ -670,34 +822,26 @@ body {
     display: flex;
     justify-content: center;
     gap: 6px;
-
     margin-bottom: 20px;
-
     color: #D3A92E;
 }
 
 .review-stars svg {
     width: 26px;
     height: 26px;
-
     fill: currentColor;
 }
 
 .review-premium-card h3 {
     margin-bottom: 12px;
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 28px;
 }
 
 .review-premium-card > p {
-    margin: 0 auto;
-
     max-width: 360px;
-
+    margin: 0 auto;
     color: var(--text-light);
-
     font-size: 14px;
     line-height: 1.75;
 }
@@ -706,25 +850,15 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
-
     width: 100%;
-
     margin-top: 24px;
     padding: 14px 18px;
-
     background: var(--primary-color);
-    color: white;
-
+    color: #FFFFFF;
     border-radius: 13px;
-
     text-decoration: none;
     font-weight: 700;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
 }
 
 .review-main-button:hover {
@@ -741,96 +875,52 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
-
     margin-top: 22px;
     padding: 13px;
-
     background: rgba(255, 255, 255, 0.72);
     color: var(--text-light);
-
     border-radius: 12px;
-
     font-size: 13px;
 }
 
 .review-link-pending svg {
     width: 17px;
     height: 17px;
-
     flex-shrink: 0;
 }
 
 .review-thank-you {
     display: flex;
     align-items: flex-start;
-
     gap: 12px;
-
     margin-top: 24px;
     padding: 18px 20px;
-
     border-top: 1px solid rgba(122, 106, 88, 0.18);
 }
 
 .review-thank-you svg {
     width: 19px;
     height: 19px;
-
     flex-shrink: 0;
-
     margin-top: 3px;
-
     color: var(--primary-color);
 }
 
 .review-thank-you p {
     margin: 0;
-
     color: var(--text-light);
-
     font-size: 14px;
     font-style: italic;
     line-height: 1.7;
 }
 
-
 /* ==========================
-   FINAL DESIGN POLISH
+   ANIMATIONS
 ========================== */
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    line-height: 1.5;
-}
-
-a,
-button {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button,
-a {
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-button:active,
-a:active {
-    transform: scale(0.98);
-}
-
 .welcome-card,
 .menu-card,
 .restaurant-card,
-.beach-card,
-.place-card,
 .contact-premium-card,
 .contact-info-box,
 .contact-hours,
@@ -839,7 +929,6 @@ a:active {
 }
 
 @keyframes fadeUp {
-
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -849,34 +938,63 @@ a:active {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
-.restaurant-card,
-.menu-card,
-.contact-button,
-.review-main-button {
-    will-change: transform;
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (min-width: 420px) {
+    .restaurant-buttons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-.restaurant-image {
-    transition: transform 0.4s ease;
-}
+@media (max-width: 380px) {
+    .content {
+        padding: 16px;
+    }
 
-.restaurant-card:hover .restaurant-image {
-    transform: scale(1.03);
-}
+    .welcome-card,
+    .restaurants-page {
+        padding: 20px;
+    }
 
-#back-button:focus-visible,
-.contact-button:focus-visible,
-.restaurant-button:focus-visible,
-.review-main-button:focus-visible {
-    outline: 3px solid rgba(122, 106, 88, 0.35);
-    outline-offset: 3px;
+    .restaurant-content {
+        padding: 19px;
+    }
+
+    .restaurant-name {
+        font-size: 26px;
+    }
+
+    .top-pick-badge,
+    .restaurant-rating,
+    .restaurant-distance {
+        font-size: 11px;
+    }
+
+    .top-pick-badge {
+        top: 10px;
+        left: 10px;
+        padding: 7px 9px;
+    }
+
+    .restaurant-rating,
+    .restaurant-distance {
+        right: 10px;
+        padding: 7px 9px;
+    }
+
+    .restaurant-rating {
+        top: 10px;
+    }
+
+    .restaurant-distance {
+        top: 50px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -885,5 +1003,4 @@ a:active {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-
 }
