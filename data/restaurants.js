@@ -270,13 +270,14 @@ const restaurantsData = [
             "https://www.google.com/maps/search/?api=1&query=Amaracus+Restaurant+Minthis+Resort+Tsada",
 
         phone:
-            "+35726842273",
+            "+35726842273 ",
 
         website:
-            "https://www.minthisresort.com/dining/"
+            "https://www.minthisresort.com/dining/ "
 
     },
-
+   
+    
     {
         name: "Divine Peak",
 
