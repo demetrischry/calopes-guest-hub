@@ -170,28 +170,44 @@ menu.addEventListener("keydown", function (event) {
 
 });
 
-/*
+/* =================================
+   DEVELOPMENT MODE
+   Remove old service workers/caches
+================================= */
+
 if ("serviceWorker" in navigator) {
 
-    window.addEventListener("load", function () {
+    window.addEventListener("load", async function () {
 
-        navigator.serviceWorker
-            .register("./service-worker.js")
-            .then(function () {
+        try {
 
-                console.log("Service Worker registered successfully.");
+            const registrations =
+                await navigator.serviceWorker.getRegistrations();
 
-            })
-            .catch(function (error) {
+            for (const registration of registrations) {
+                await registration.unregister();
+            }
 
-                console.error(
-                    "Service Worker registration failed:",
-                    error
-                );
+            const cacheNames = await caches.keys();
 
-            });
+            for (const cacheName of cacheNames) {
+                await caches.delete(cacheName);
+            }
+
+            console.log(
+                "Development mode: old service workers and caches removed."
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Could not clear old service worker data:",
+                error
+            );
+
+        }
 
     });
+
 }
-*/
 
