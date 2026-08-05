@@ -1,19 +1,19 @@
 function createBeachesPage() {
 
-    let popularHTML = "";
-    let paphosHTML = "";
+    let relaxedHTML = "";
+    let natureHTML = "";
 
     beachesData.forEach(function (beach) {
 
         const card = createPlaceCard(beach);
 
-        if (beach.category === "popular") {
+        if (beach.category === "relaxed") {
 
-            popularHTML += card;
+            relaxedHTML += card;
 
-        } else if (beach.category === "paphos") {
+        } else if (beach.category === "nature") {
 
-            paphosHTML += card;
+            natureHTML += card;
 
         }
 
@@ -23,97 +23,94 @@ function createBeachesPage() {
 
         <section class="welcome-card restaurants-page">
 
-            <button id="back-button">
+            ${createPageHeader({
 
-                <i data-lucide="arrow-left"></i>
+                icon: "waves",
 
-                Back
+                title: "Beaches",
 
-            </button>
+                description:
+                    "Beautiful beaches and unforgettable coastal experiences, carefully selected for your stay."
 
-            <header class="page-intro">
+            })}
 
-                <span class="page-eyebrow">
+            ${createBeachCategory({
 
-                    Calopes Suites Local Guide
+                icon: "sun",
 
-                </span>
+                title: "Relaxed Beach Days",
 
-                <h2>Beaches</h2>
+                description:
+                    "Beautiful beaches with calm waters, ideal for swimming, relaxing and enjoying an easy day by the sea.",
 
-                <p>
+                cards: relaxedHTML
 
-                    Discover some of the most beautiful beaches
-                    around Paphos, all within a short drive from
-                    Calopes Suites.
+            })}
 
-                </p>
+            ${createBeachCategory({
 
-            </header>
+                icon: "mountain",
 
-            <section class="restaurant-category">
+                title: "Nature & Iconic Coast",
 
-                <div class="category-heading">
+                description:
+                    "Discover protected natural beaches, crystal-clear waters and some of Cyprus' most memorable coastal landmarks.",
 
-                    <div class="category-icon">
+                cards: natureHTML
 
-                        <i data-lucide="umbrella"></i>
+            })}
 
-                    </div>
+        </section>
 
-                    <div>
+    `;
 
-                        <h3>Most Popular</h3>
+}
 
-                        <p>
 
-                            Our favourite beaches for swimming and relaxing.
+function createBeachCategory({
 
-                        </p>
+    icon,
+    title,
+    description,
+    cards
 
-                    </div>
+}) {
 
-                </div>
+    if (!cards.trim()) {
+        return "";
+    }
 
-                <div class="restaurant-grid">
+    return `
 
-                    ${popularHTML}
+        <section class="restaurant-category">
 
-                </div>
+            <div class="category-heading">
 
-            </section>
+                <div class="category-icon">
 
-            <section class="restaurant-category">
-
-                <div class="category-heading">
-
-                    <div class="category-icon">
-
-                        <i data-lucide="waves"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h3>Kato Paphos</h3>
-
-                        <p>
-
-                            Beaches close to the harbour and promenade.
-
-                        </p>
-
-                    </div>
+                    <i data-lucide="${icon}"></i>
 
                 </div>
 
-                <div class="restaurant-grid">
+                <div>
 
-                    ${paphosHTML}
+                    <h3>
+                        ${title}
+                    </h3>
+
+                    <p>
+                        ${description}
+                    </p>
 
                 </div>
 
-            </section>
+            </div>
+
+            <div class="restaurant-grid">
+
+                ${cards}
+
+            </div>
 
         </section>
 

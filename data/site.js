@@ -4,18 +4,11 @@ const siteData = {
 
     village: "Kallepeia",
 
-    phone: "+357XXXXXXXX",
+    phone: "+35799615541",
 
-    email: "info@calopessuites.com",
+    email: "welcome@calopessuites.cy",
 
-    website: "https://calopessuites.com",
+    
 
-    wifiName: "Calopes Suites WiFi",
-
-    wifiPassword: "12345678",
-
-    checkIn: "15:00",
-
-    checkOut: "11:00"
 
 };

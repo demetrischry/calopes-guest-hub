@@ -1,27 +1,26 @@
 const restaurantsData = [
 
     /* =================================
-       CALOPES TOP PICKS
+       DISCOVER KALLEPEIA
     ================================= */
 
     {
         name: "Monastiraki Tavern",
 
         category: "kallepeia",
-        topPick: true,
-        badge: "Our Favourite",
+
+        badge: "Traditional",
 
         location: "Kallepeia",
-        cuisine: "Greek & Cypriot Cuisine",
+
+        subtitle: "Greek & Cypriot Cuisine",
+
+        typeIcon: "utensils",
 
         distance: "2 min",
-        rating: "4.8",
 
         description:
-            "A welcoming village tavern serving Greek and Cypriot dishes in the heart of Kallepeia.",
-
-        recommendation:
-            "Perfect for your first evening. Enjoy local flavours and a relaxed village atmosphere just minutes from Calopes Suites.",
+            "A welcoming village tavern where you can enjoy authentic Greek and Cypriot flavours just moments from Calopes Suites.",
 
         image:
             "images/restaurants/monastiraki.jpg",
@@ -29,31 +28,180 @@ const restaurantsData = [
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Monastiraki+Tavern+Kallepeia+Cyprus",
 
-        phone:
-            "+35799844343",
+        phone: "",
 
-        website:
-            ""
+        website: ""
+    },
+
+    {
+        name: "Kika's Garden",
+
+        category: "kallepeia",
+
+        badge: "Garden Brunch",
+
+        location: "Kallepeia",
+
+        subtitle: "Homemade Food & Brunch",
+
+        typeIcon: "utensils",
+
+        distance: "3 min",
+
+        description:
+            "A peaceful garden setting, perfect for a relaxed breakfast or brunch with homemade dishes and carefully selected local produce.",
+
+        image:
+            "images/restaurants/kikas.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Kika%27s+Garden+Kallepeia+Cyprus",
+
+        phone:
+            "+35799459400",
+
+        website: ""
+    },
+
+    {
+        name: "Taverna Tou Christaki",
+
+        category: "kallepeia",
+
+        badge: "Family Tavern",
+
+        location: "Kallepeia",
+
+        subtitle: "Authentic Cypriot Cuisine",
+
+        typeIcon: "utensils",
+
+        distance: "2 min",
+
+        description:
+            "A family-run tavern where traditional recipes and genuine Cypriot hospitality come together in the heart of Kallepeia.",
+
+        image:
+            "images/restaurants/christaki.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Taverna+Tou+Christaki+Kallepeia+Cyprus",
+
+        phone: "",
+
+        website: ""
+    },
+
+
+    /* =================================
+       AUTHENTIC CYPRIOT TAVERNS
+    ================================= */
+
+    {
+        name: "Agora Tavern",
+
+        category: "cypriot-taverns",
+
+        badge: "Cypriot Meze",
+
+        location: "Paphos Old Town",
+
+        subtitle: "Traditional Cypriot Cuisine",
+
+        typeIcon: "utensils",
+
+        distance: "25 min",
+
+        description:
+            "A lively traditional tavern in Paphos Old Town, well suited to guests who want to experience a generous Cypriot meze.",
+
+        image:
+            "images/restaurants/agora.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Agora+Tavern+Paphos+Cyprus",
+
+        phone:
+            "+35799611817",
+
+        website: ""
+    },
+
+    {
+        name: "Pagkratios Tavern",
+
+        category: "cypriot-taverns",
+
+        badge: "Traditional Meze",
+
+        location: "Paphos",
+
+        subtitle: "Authentic Cypriot Cuisine",
+
+        typeIcon: "utensils",
+
+        distance: "25 min",
+
+        description:
+            "A warm and welcoming tavern offering traditional Cypriot meze and a relaxed local dining experience in Paphos.",
+
+        image:
+            "images/restaurants/pagkratios.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Pagkratios+Tavern+Paphos+Cyprus",
+
+        phone: "",
+
+        website: ""
+    },
+
+    {
+        name: "Aristo's Tavern",
+
+        category: "cypriot-taverns",
+
+        badge: "Charcoal Grill",
+
+        location: "Tsada",
+
+        subtitle: "Traditional Grill House",
+
+        typeIcon: "utensils",
+
+        distance: "10 min",
+
+        description:
+            "A cosy local tavern known for charcoal-grilled specialities, homemade dishes and genuine Cypriot hospitality.",
+
+        image:
+            "images/restaurants/aristos.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Aristo%27s+Tavern+Tsada+Cyprus",
+
+        phone: "",
+
+        website: ""
     },
 
     {
         name: "Letymbou Tavern",
 
-        category: "nearby",
-        topPick: true,
-        badge: "Best Traditional Meze",
+        category: "cypriot-taverns",
+
+        badge: "Village Cuisine",
 
         location: "Letymbou",
-        cuisine: "Traditional Cypriot",
+
+        subtitle: "Traditional Cypriot Cuisine",
+
+        typeIcon: "utensils",
 
         distance: "10 min",
-        rating: "4.8",
 
         description:
-            "A traditional village restaurant offering Cypriot recipes, local wines and a friendly family atmosphere.",
-
-        recommendation:
-            "A wonderful choice for a generous traditional meze and an authentic evening in a peaceful village.",
+            "A charming village tavern offering homemade Cypriot food in the peaceful surroundings of nearby Letymbou.",
 
         image:
             "images/restaurants/letymbou.jpg",
@@ -69,161 +217,22 @@ const restaurantsData = [
     },
 
     {
-        name: "Agora Tavern",
+        name: "Gerolakkos Tavern",
 
-        category: "paphos",
-        topPick: true,
-        badge: "Old Town Favourite",
+        category: "cypriot-taverns",
 
-        location: "Paphos Old Town",
-        cuisine: "Traditional Cypriot",
-
-        distance: "25 min",
-        rating: "4.6",
-
-        description:
-            "A popular traditional tavern near Paphos Old Town, known for Cypriot flavours, meze and a lively atmosphere.",
-
-        recommendation:
-            "A great choice after exploring Paphos Old Town. Try the traditional meze and enjoy the local atmosphere.",
-
-        image:
-            "images/restaurants/agora.jpg",
-
-        mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Agora+Tavern+Paphos+Cyprus",
-
-        phone:
-            "+35799611817",
-
-        website:
-            ""
-    },
-
-
-    /* =================================
-       IN KALLEPEIA
-    ================================= */
-
-    {
-        name: "To Konatzi Tis Kallepias",
-
-        category: "kallepeia",
-        topPick: false,
-        badge: "Traditional Village Experience",
-
-        location: "Kallepeia",
-        cuisine: "Traditional Cypriot",
-
-        distance: "2 min",
-        rating: "4.8",
-
-        description:
-            "A traditional village tavern serving local dishes, Cypriot meze and Sunday souvla in the centre of Kallepeia.",
-
-        recommendation:
-            "Ideal for an authentic local meal without leaving the village. Sunday lunch is especially popular.",
-
-        image:
-            "images/restaurants/konatzi.jpg",
-
-        mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=To+Konatzi+Tis+Kallepias+Cyprus",
-
-        phone:
-            "",
-
-        website:
-            ""
-    },
-
-    {
-        name: "Kika's Garden",
-
-        category: "kallepeia",
-        topPick: false,
-        badge: "Garden Brunch",
-
-        location: "Kallepeia",
-        cuisine: "Homemade Food & Brunch",
-
-        distance: "3 min",
-        rating: "4.8",
-
-        description:
-            "A charming garden setting offering homemade food, brunch and carefully selected local produce.",
-
-        recommendation:
-            "A lovely choice for a relaxed breakfast or brunch surrounded by the peaceful atmosphere of Kallepeia.",
-
-        image:
-            "images/restaurants/kikas.jpg",
-
-        mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Kika%27s+Garden+Kallepeia+Cyprus",
-
-        phone:
-            "+35799459400",
-
-        website:
-            "https://www.kikasgarden.com/"
-    },
-
-
-    /* =================================
-       NEARBY VILLAGES
-    ================================= */
-
-    {
-        name: "Aristo's Place Tavern",
-
-        category: "nearby",
-        topPick: false,
-        badge: "Hidden Village Gem",
+        badge: "Rustic Dining",
 
         location: "Tsada",
-        cuisine: "Cypriot & Mediterranean",
 
-        distance: "10 min",
-        rating: "4.8",
+        subtitle: "Traditional Cypriot Cuisine",
 
-        description:
-            "A cosy village tavern offering homemade dishes, generous portions and warm local hospitality.",
-
-        recommendation:
-            "A relaxed choice for dinner in Tsada, especially if you prefer a quiet and traditional village setting.",
-
-        image:
-            "images/restaurants/aristos.jpg",
-
-        mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Aristo%27s+Place+Tavern+Tsada+Cyprus",
-
-        phone:
-            "+35799802778",
-
-        website:
-            ""
-    },
-
-    {
-        name: "The Fountain of Gerolakkos",
-
-        category: "nearby",
-        topPick: false,
-        badge: "Scenic Village Dining",
-
-        location: "Tsada",
-        cuisine: "Greek & Cypriot Grill",
+        typeIcon: "utensils",
 
         distance: "12 min",
-        rating: "4.5",
 
         description:
-            "A traditional restaurant in Tsada offering local food, grilled dishes and beautiful countryside views.",
-
-        recommendation:
-            "A good choice for a relaxed summer evening with village views and traditional flavours.",
+            "A relaxed countryside tavern serving traditional dishes in a rustic setting with beautiful views around Tsada.",
 
         image:
             "images/restaurants/gerolakkos.jpg",
@@ -234,80 +243,103 @@ const restaurantsData = [
         phone:
             "+35799330781",
 
-        website:
-            ""
+        website: ""
     },
 
 
     /* =================================
-       SPECIAL DINING
+       PREMIUM DINING
     ================================= */
-    {
-         name: "Amaracus",
 
-        category: "special",
+    {
+        name: "Amaracus",
+
+        category: "premium",
 
         badge: "Fine Dining",
 
         location: "Minthis Resort, Tsada",
 
-        cuisine: "Modern Mediterranean",
+        subtitle: "Modern Mediterranean Cuisine",
+
+        typeIcon: "utensils",
 
         distance: "10 min",
 
-        rating: "5.0",
-
         description:
-            "An elegant fine dining restaurant at Minthis Resort, inspired by Mediterranean flavours and local seasonal ingredients.",
-
-        recommendation:
-            "Perfect for a romantic dinner or a special evening. One of the finest dining experiences near Calopes Suites.",
+            "A refined dining experience at Minthis Resort, combining creative Mediterranean cuisine with elegant surroundings.",
 
         image:
-            "images/restaurants/minthis.jpg",
+            "images/restaurants/amaracus.jpg",
 
         mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Amaracus+Restaurant+Minthis+Resort+Tsada",
+            "https://www.google.com/maps/search/?api=1&query=Amaracus+Restaurant+Minthis+Resort+Cyprus",
 
         phone:
-            "+35726842273 ",
+            "+35726842273",
 
         website:
-            "https://www.minthisresort.com/dining/ "
-
+            "https://www.minthisresort.com/dining/"
     },
-   
-    
+
     {
-        name: "Divine Peak",
+        name: "Noiro by the Sea",
 
-        category: "special",
-        topPick: false,
-        badge: "Rooftop Fine Dining",
+        category: "premium",
 
-        location: "Paphos",
-        cuisine: "Modern Mediterranean",
+        badge: "Sea View",
+
+        location: "Paphos Coast",
+
+        subtitle: "Mediterranean Seaside Dining",
+
+        typeIcon: "utensils",
+
+        distance: "35 min",
+
+        description:
+            "Stylish seaside dining with beautiful coastal views, a relaxed atmosphere and Mediterranean-inspired flavours.",
+
+        image:
+            "images/restaurants/noiro-by-the-sea.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Noiro+by+the+Sea+Paphos+Cyprus",
+
+        phone: "",
+
+        website: ""
+    },
+
+    {
+        name: "Duomo Restaurant",
+
+        category: "premium",
+
+        badge: "Italian Cuisine",
+
+        location: "Tombs of the Kings, Paphos",
+
+        subtitle: "Modern Italian Dining",
+
+        typeIcon: "utensils",
 
         distance: "25 min",
-        rating: "",
 
         description:
-            "A stylish rooftop restaurant offering a modern dining experience and impressive views across Paphos.",
-
-        recommendation:
-            "Choose Divine Peak for a romantic dinner, celebration or a memorable evening with panoramic views.",
+            "A contemporary Italian restaurant serving freshly prepared pasta, seafood, meat dishes and classic Italian favourites.",
 
         image:
-            "images/restaurants/divine.jpg",
+            "images/restaurants/duomo.jpg",
 
         mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Divine+Peak+Restaurant+Paphos+Cyprus",
+            "https://www.google.com/maps/search/?api=1&query=Duomo+Italian+Restaurant+Paphos+Cyprus",
 
         phone:
-            "",
+            "+35799473931",
 
         website:
-            "https://www.divinepeak.cy/"
+            "https://www.duomo.com.cy/"
     }
 
 ];

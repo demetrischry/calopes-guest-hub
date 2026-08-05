@@ -1,13 +1,6 @@
 const menuItems = [
 
     {
-        id: "wifi",
-        title: "WiFi",
-        description: "Connect instantly to the internet",
-        icon: "wifi"
-    },
-
-    {
         id: "restaurants",
         title: "Restaurants",
         description: "Our favourite places to eat",
@@ -29,6 +22,13 @@ const menuItems = [
     },
 
     {
+        id: "useful",
+        title: "Useful Information",
+        description: "Supermarkets, pharmacies and emergency contacts",
+        icon: "info"
+    },
+
+    {
         id: "contact",
         title: "Contact",
         description: "Need help? Contact us",
@@ -36,9 +36,9 @@ const menuItems = [
     },
 
     {
-        id: "review",
-        title: "Leave a Review",
-        description: "Share your experience",
+        page: "review",
+        title: "Share Your Experience",
+        description: "Leave a review",
         icon: "star"
     }
 

@@ -10,35 +10,12 @@ function createPlaceCard(place) {
                     src="${place.image}"
                     alt="${place.name}"
                     class="restaurant-image"
+                    loading="lazy"
                     onerror="
                         this.onerror = null;
                         this.src = 'images/restaurants/restaurant-placeholder.jpg';
                     "
                 >
-
-                ${place.topPick ? `
-
-                    <span class="top-pick-badge">
-
-                        <i data-lucide="award"></i>
-
-                        Calopes Pick
-
-                    </span>
-
-                ` : ""}
-
-                ${place.rating ? `
-
-                    <span class="restaurant-rating">
-
-                        <i data-lucide="star"></i>
-
-                        ${place.rating}
-
-                    </span>
-
-                ` : ""}
 
                 ${place.distance ? `
 
@@ -82,13 +59,13 @@ function createPlaceCard(place) {
 
                     ` : ""}
 
-                    ${place.cuisine ? `
+                    ${place.subtitle ? `
 
                         <span>
 
-                            <i data-lucide="utensils"></i>
+                            <i data-lucide="${place.typeIcon || "info"}"></i>
 
-                            ${place.cuisine}
+                            ${place.subtitle}
 
                         </span>
 
@@ -101,26 +78,6 @@ function createPlaceCard(place) {
                     <p class="restaurant-description">
                         ${place.description}
                     </p>
-
-                ` : ""}
-
-                ${place.recommendation ? `
-
-                    <div class="recommendation-box">
-
-                        <div class="recommendation-title">
-
-                            <i data-lucide="sparkles"></i>
-
-                            <span>Why We Love It</span>
-
-                        </div>
-
-                        <p>
-                            ${place.recommendation}
-                        </p>
-
-                    </div>
 
                 ` : ""}
 
@@ -137,7 +94,7 @@ function createPlaceCard(place) {
 
                             <i data-lucide="navigation"></i>
 
-                            Directions
+                            Get Directions
 
                         </a>
 

@@ -1,213 +1,382 @@
-// Menu Container
+// =================================
+// MAIN ELEMENTS
+// =================================
+
 const menu = document.getElementById("menu");
 const pageContainer = document.getElementById("page-container");
-const welcomeSection = document.getElementById("welcome-section");
 
-// Create Menu
-menuItems.forEach(item => {
 
-    menu.innerHTML += `
-    
-        <article
-            class="menu-card"
-            data-page="${item.id}"
-            role="button"
-            tabindex="0"
-        >
-            <div class="menu-icon">
-                <i data-lucide="${item.icon}"></i>
-            </div>
+// =================================
+// CREATE MAIN MENU
+// =================================
 
-            <div class="menu-text">
+menu.innerHTML = menuItems
+    .map(function (item) {
 
-                <h3>${item.title}</h3>
+        const pageName = item.page || item.id;
 
-                <p>${item.description}</p>
+        return `
 
-            </div>
+            <article
+                class="menu-card"
+                data-page="${pageName}"
+                role="button"
+                tabindex="0"
+            >
 
-            <div class="menu-arrow">
-                →
-            </div>
+                <div class="menu-icon">
 
-        </article>
+                    <i data-lucide="${item.icon}"></i>
 
-    `;
+                </div>
 
-});
+                <div class="menu-text">
+
+                    <h3>
+                        ${item.title}
+                    </h3>
+
+                    <p>
+                        ${item.description}
+                    </p>
+
+                </div>
+
+                <div class="menu-arrow">
+                    →
+                </div>
+
+            </article>
+
+        `;
+
+    })
+    .join("");
 
 lucide.createIcons();
 
-function showPage(page) {
 
-    if (page === "wifi") {
+// =================================
+// PAGE TRANSITION
+// =================================
 
-        welcomeSection.classList.add("hidden");
-        menu.classList.add("hidden");
+function animatePage() {
 
-        pageContainer.innerHTML = createWifiPage();
+    pageContainer.classList.remove("page-transition");
 
-        document
-            .getElementById("back-button")
-            .addEventListener("click", goHome);
+    void pageContainer.offsetWidth;
 
-        document
-            .getElementById("copy-password-button")
-            .addEventListener("click", copyWifiPassword);
+    pageContainer.classList.add("page-transition");
 
-    }
+}
+
+
+// =================================
+// OPEN PAGE
+// =================================
+
+function showPage(page, updateHistory = true) {
+
+    let pageHTML = "";
 
     if (page === "restaurants") {
 
-        welcomeSection.classList.add("hidden");
-        menu.classList.add("hidden");
+        pageHTML = createRestaurantsPage();
 
-        pageContainer.innerHTML = createRestaurantsPage();
+    } else if (page === "beaches") {
 
-        document
-            .getElementById("back-button")
-            .addEventListener("click", goHome);
-        lucide.createIcons();
-    }
-    if (page === "beaches") {
+        pageHTML = createBeachesPage();
 
-        welcomeSection.classList.add("hidden");
-        menu.classList.add("hidden");
+    } else if (page === "places") {
 
-        pageContainer.innerHTML = createBeachesPage();
+        pageHTML = createPlacesPage();
 
-        document
-            .getElementById("back-button")
-            .addEventListener("click", goHome);
+    } else if (page === "useful") {
 
-    }
-    if (page === "places") {
+        pageHTML = createUsefulPage();
 
-        welcomeSection.classList.add("hidden");
-        menu.classList.add("hidden");
+    } else if (page === "contact") {
 
-        pageContainer.innerHTML = createPlacesPage();
+        pageHTML = createContactPage();
 
-        document
-            .getElementById("back-button")
-            .addEventListener("click", goHome);
+    } else if (page === "review") {
 
-    }
+        pageHTML = createReviewsPage();
 
-    if (page === "contact") {
+    } else {
 
-        welcomeSection.classList.add("hidden");
-        menu.classList.add("hidden");
+        console.error("Unknown page:", page);
 
-        pageContainer.innerHTML = createContactPage();
-        lucide.createIcons();
-
-        document
-            .getElementById("back-button")
-            .addEventListener("click", goHome);
-
-    }
-    if (page === "review") {
-
-        welcomeSection.classList.add("hidden");
-        menu.classList.add("hidden");
-
-        pageContainer.innerHTML = createReviewPage();
-
-        document
-            .getElementById("back-button")
-            .addEventListener("click", goHome);
-
-    }
-
-}
-function copyWifiPassword() {
-
-    navigator.clipboard.writeText(wifiData.password);
-
-    document.getElementById("copy-message").textContent =
-        "Password copied!";
-
-}
-
-
-function goHome() {
-
-    pageContainer.innerHTML = "";
-
-    welcomeSection.classList.remove("hidden");
-    menu.classList.remove("hidden");
-
-}
-// Handle menu clicks
-menu.addEventListener("click", function (event) {
-
-    const card = event.target.closest(".menu-card");
-
-    if (!card) return;
-
-    const page = card.dataset.page;
-
-    showPage(page);
-
-});
-
-menu.addEventListener("keydown", function (event) {
-
-    if (event.key !== "Enter" && event.key !== " ") {
         return;
+
     }
 
-    const card = event.target.closest(".menu-card");
+    menu.classList.add("hidden");
 
-    if (!card) return;
+    pageContainer.innerHTML = pageHTML;
 
-    event.preventDefault();
+    animatePage();
 
-    const page = card.dataset.page;
+    lucide.createIcons();
 
-    showPage(page);
+    pageContainer.scrollIntoView({
 
-});
+        behavior: "smooth",
 
-/* =================================
-   DEVELOPMENT MODE
-   Remove old service workers/caches
-================================= */
-
-if ("serviceWorker" in navigator) {
-
-    window.addEventListener("load", async function () {
-
-        try {
-
-            const registrations =
-                await navigator.serviceWorker.getRegistrations();
-
-            for (const registration of registrations) {
-                await registration.unregister();
-            }
-
-            const cacheNames = await caches.keys();
-
-            for (const cacheName of cacheNames) {
-                await caches.delete(cacheName);
-            }
-
-            console.log(
-                "Development mode: old service workers and caches removed."
-            );
-
-        } catch (error) {
-
-            console.error(
-                "Could not clear old service worker data:",
-                error
-            );
-
-        }
+        block: "start"
 
     });
 
+    if (updateHistory) {
+
+        history.pushState(
+
+            { page: page },
+
+            "",
+
+            `#${page}`
+
+        );
+
+    }
+
+    const backButton = document.getElementById("back-button");
+
+    if (backButton) {
+
+        backButton.addEventListener(
+
+            "click",
+
+            function () {
+
+                history.back();
+
+            }
+
+        );
+
+    }
+
+
+    // ===============================
+    // CONTACT BUTTON INSIDE USEFUL PAGE
+    // ===============================
+
+    const usefulContactButton =
+        document.getElementById("useful-contact-button");
+
+    if (usefulContactButton) {
+
+        usefulContactButton.addEventListener(
+
+            "click",
+
+            function () {
+
+                showPage("contact");
+
+            }
+
+        );
+
+    }
+
 }
 
+
+// =================================
+// RETURN TO HOME
+// =================================
+
+function goHome(updateHistory = true) {
+
+    pageContainer.innerHTML = "";
+
+    pageContainer.classList.remove("page-transition");
+
+    menu.classList.remove("hidden");
+
+    menu.classList.remove("menu-transition");
+
+    void menu.offsetWidth;
+
+    menu.classList.add("menu-transition");
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+    lucide.createIcons();
+
+    if (updateHistory) {
+
+        history.pushState(
+
+            { page: "home" },
+
+            "",
+
+            window.location.pathname
+
+        );
+
+    }
+
+}
+
+
+// =================================
+// MENU CLICK
+// =================================
+
+menu.addEventListener(
+
+    "click",
+
+    function (event) {
+
+        const card = event.target.closest(".menu-card");
+
+        if (!card) return;
+
+        showPage(card.dataset.page);
+
+    }
+
+);
+
+
+// =================================
+// KEYBOARD ACCESSIBILITY
+// =================================
+
+menu.addEventListener(
+
+    "keydown",
+
+    function (event) {
+
+        if (
+
+            event.key !== "Enter" &&
+
+            event.key !== " "
+
+        ) return;
+
+        const card = event.target.closest(".menu-card");
+
+        if (!card) return;
+
+        event.preventDefault();
+
+        showPage(card.dataset.page);
+
+    }
+
+);
+
+
+// =================================
+// BROWSER BACK BUTTON
+// =================================
+
+window.addEventListener(
+
+    "popstate",
+
+    function (event) {
+
+        const page = event.state?.page;
+
+        if (
+
+            page &&
+
+            page !== "home"
+
+        ) {
+
+            showPage(page, false);
+
+        } else {
+
+            goHome(false);
+
+        }
+
+    }
+
+);
+
+
+// =================================
+// INITIAL HISTORY STATE
+// =================================
+
+history.replaceState(
+
+    { page: "home" },
+
+    "",
+
+    window.location.pathname
+
+);
+
+
+// =================================
+// DEVELOPMENT MODE
+// =================================
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener(
+
+        "load",
+
+        async function () {
+
+            try {
+
+                const registrations =
+                    await navigator.serviceWorker.getRegistrations();
+
+                for (const registration of registrations) {
+
+                    await registration.unregister();
+
+                }
+
+                const cacheNames =
+                    await caches.keys();
+
+                for (const cacheName of cacheNames) {
+
+                    await caches.delete(cacheName);
+
+                }
+
+                console.log(
+                    "Development mode: old service workers removed."
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+            }
+
+        }
+
+    );
+
+}

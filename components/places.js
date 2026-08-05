@@ -1,29 +1,26 @@
 function createPlacesPage() {
 
-    let villagesHTML = "";
-    let cityHTML = "";
-    let historyHTML = "";
+    let kallepeiaHTML = "";
+    let historicHTML = "";
     let natureHTML = "";
 
     placesData.forEach(function (place) {
 
         const card = createPlaceCard(place);
 
-        if (place.category === "villages") {
+        switch (place.category) {
 
-            villagesHTML += card;
+            case "kallepeia":
+                kallepeiaHTML += card;
+                break;
 
-        } else if (place.category === "city") {
+            case "historic":
+                historicHTML += card;
+                break;
 
-            cityHTML += card;
-
-        } else if (place.category === "history") {
-
-            historyHTML += card;
-
-        } else if (place.category === "nature") {
-
-            natureHTML += card;
+            case "nature":
+                natureHTML += card;
+                break;
 
         }
 
@@ -33,156 +30,107 @@ function createPlacesPage() {
 
         <section class="welcome-card restaurants-page">
 
-            <button id="back-button">
+            ${createPageHeader({
 
-                <i data-lucide="arrow-left"></i>
+                icon: "map-pin",
 
-                Back
+                title: "Places to Visit",
 
-            </button>
+                description:
+                    "Discover meaningful places, historic landmarks and beautiful natural sights across Kallepeia and the Paphos region."
 
-            <header class="page-intro">
+            })}
 
-                <span class="page-eyebrow">
-                    Calopes Suites Local Guide
-                </span>
+            ${createPlacesCategory({
 
-                <h2>Places to Visit</h2>
+                icon: "home",
 
-                <p>
-                    Explore villages, history and beautiful landscapes
-                    around Paphos.
-                </p>
+                title: "Discover Kallepeia",
 
-            </header>
+                description:
+                    "Explore the village, its local landmarks and the peaceful character surrounding Calopes Suites.",
 
-            ${villagesHTML ? `
+                cards: kallepeiaHTML
 
-                <section class="restaurant-category">
+            })}
 
-                    <div class="category-heading">
+            ${createPlacesCategory({
 
-                        <div class="category-icon">
+                icon: "landmark",
 
-                            <i data-lucide="house"></i>
+                title: "Historic & Cultural",
 
-                        </div>
+                description:
+                    "Visit important monasteries, archaeological landmarks and historic areas that reveal the rich heritage of Paphos.",
 
-                        <div>
+                cards: historicHTML
 
-                            <h3>Villages</h3>
+            })}
 
-                            <p>Traditional villages worth visiting.</p>
+            ${createPlacesCategory({
 
-                        </div>
+                icon: "mountain",
 
-                    </div>
+                title: "Nature & Views",
 
-                    <div class="restaurant-grid">
+                description:
+                    "Discover distinctive landscapes, coastal scenery and natural attractions across the Paphos region.",
 
-                        ${villagesHTML}
+                cards: natureHTML
 
-                    </div>
+            })}
 
-                </section>
+        </section>
 
-            ` : ""}
+    `;
 
-            ${cityHTML ? `
+}
 
-                <section class="restaurant-category">
 
-                    <div class="category-heading">
+function createPlacesCategory({
 
-                        <div class="category-icon">
+    icon,
+    title,
+    description,
+    cards
 
-                            <i data-lucide="building-2"></i>
+}) {
 
-                        </div>
+    if (!cards.trim()) {
+        return "";
+    }
 
-                        <div>
+    return `
 
-                            <h3>City</h3>
+        <section class="restaurant-category">
 
-                            <p>Explore the heart of Paphos.</p>
+            <div class="category-heading">
 
-                        </div>
+                <div class="category-icon">
 
-                    </div>
+                    <i data-lucide="${icon}"></i>
 
-                    <div class="restaurant-grid">
+                </div>
 
-                        ${cityHTML}
+                <div>
 
-                    </div>
+                    <h3>
+                        ${title}
+                    </h3>
 
-                </section>
+                    <p>
+                        ${description}
+                    </p>
 
-            ` : ""}
+                </div>
 
-            ${historyHTML ? `
+            </div>
 
-                <section class="restaurant-category">
+            <div class="restaurant-grid">
 
-                    <div class="category-heading">
+                ${cards}
 
-                        <div class="category-icon">
-
-                            <i data-lucide="landmark"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h3>History</h3>
-
-                            <p>Historical sites and monuments.</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="restaurant-grid">
-
-                        ${historyHTML}
-
-                    </div>
-
-                </section>
-
-            ` : ""}
-
-            ${natureHTML ? `
-
-                <section class="restaurant-category">
-
-                    <div class="category-heading">
-
-                        <div class="category-icon">
-
-                            <i data-lucide="mountain"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h3>Nature</h3>
-
-                            <p>Natural landmarks and amazing views.</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="restaurant-grid">
-
-                        ${natureHTML}
-
-                    </div>
-
-                </section>
-
-            ` : ""}
+            </div>
 
         </section>
 

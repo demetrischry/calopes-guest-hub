@@ -1,39 +1,26 @@
 function createRestaurantsPage() {
 
-    let topPicksHTML = "";
     let kallepeiaHTML = "";
-    let nearbyHTML = "";
-    let paphosHTML = "";
-    let specialHTML = "";
+    let cypriotTavernsHTML = "";
+    let premiumDiningHTML = "";
 
     restaurantsData.forEach(function (restaurant) {
 
         const card = createPlaceCard(restaurant);
 
-        /*
-            Τα Top Picks εμφανίζονται μόνο
-            στην πρώτη κατηγορία.
-        */
+        switch (restaurant.category) {
 
-        if (restaurant.topPick === true) {
+            case "kallepeia":
+                kallepeiaHTML += card;
+                break;
 
-            topPicksHTML += card;
+            case "cypriot-taverns":
+                cypriotTavernsHTML += card;
+                break;
 
-        } else if (restaurant.category === "kallepeia") {
-
-            kallepeiaHTML += card;
-
-        } else if (restaurant.category === "nearby") {
-
-            nearbyHTML += card;
-
-        } else if (restaurant.category === "paphos") {
-
-            paphosHTML += card;
-
-        } else if (restaurant.category === "special") {
-
-            specialHTML += card;
+            case "premium":
+                premiumDiningHTML += card;
+                break;
 
         }
 
@@ -43,210 +30,102 @@ function createRestaurantsPage() {
 
         <section class="welcome-card restaurants-page">
 
-            <button id="back-button">
+            ${createPageHeader({
 
-                <i data-lucide="arrow-left"></i>
+                icon: "utensils",
 
-                Back
+                title: "Restaurants",
 
-            </button>
+                description:
+                    "Handpicked dining experiences, personally selected for our guests."
 
-            <header class="page-intro">
+            })}
 
-                <span class="page-eyebrow">
-                    Calopes Suites Local Guide
-                </span>
+            ${createRestaurantCategory({
 
-                <h2>Eat Like a Local</h2>
+                icon: "map-pinned",
 
-                <p>
-                    Discover our favourite places to enjoy authentic
-                    Cypriot flavours, welcoming village taverns and
-                    memorable dining experiences around Kallepeia
-                    and Paphos.
-                </p>
+                title: "Discover Kallepeia",
 
-            </header>
+                description:
+                    "Experience local flavours in the heart of Kallepeia, just moments from Calopes Suites.",
 
+                cards: kallepeiaHTML
 
-            ${topPicksHTML ? `
+            })}
 
-                <section class="restaurant-category">
+            ${createRestaurantCategory({
 
-                    <div class="category-heading">
+                icon: "chef-hat",
 
-                        <div class="category-icon">
+                title: "Authentic Cypriot Taverns",
 
-                            <i data-lucide="heart"></i>
+                description:
+                    "Discover traditional Cypriot cuisine across Paphos and the surrounding villages.",
 
-                        </div>
+                cards: cypriotTavernsHTML
 
-                        <div>
+            })}
 
-                            <h3>Calopes Top Picks</h3>
+            ${createRestaurantCategory({
 
-                            <p>
-                                The restaurants we most enjoy recommending
-                                to our guests.
-                            </p>
+                icon: "sparkles",
 
-                        </div>
+                title: "Premium Dining",
 
-                    </div>
+                description:
+                    "Elegant restaurants offering refined cuisine and memorable dining experiences.",
 
-                    <div class="restaurant-grid">
+                cards: premiumDiningHTML
 
-                        ${topPicksHTML}
+            })}
 
-                    </div>
+        </section>
 
-                </section>
+    `;
 
-            ` : ""}
+}
 
 
-            ${kallepeiaHTML ? `
 
-                <section class="restaurant-category">
+function createRestaurantCategory({
 
-                    <div class="category-heading">
+    icon,
+    title,
+    description,
+    cards
 
-                        <div class="category-icon">
+}) {
 
-                            <i data-lucide="map-pin"></i>
+    if (!cards.trim()) return "";
 
-                        </div>
+    return `
 
-                        <div>
+        <section class="restaurant-category">
 
-                            <h3>In Kallepeia</h3>
+            <div class="category-heading">
 
-                            <p>
-                                Local food and relaxed dining just minutes
-                                from Calopes Suites.
-                            </p>
+                <div class="category-icon">
 
-                        </div>
+                    <i data-lucide="${icon}"></i>
 
-                    </div>
+                </div>
 
-                    <div class="restaurant-grid">
+                <div>
 
-                        ${kallepeiaHTML}
+                    <h3>${title}</h3>
 
-                    </div>
+                    <p>${description}</p>
 
-                </section>
+                </div>
 
-            ` : ""}
+            </div>
 
+            <div class="restaurant-grid">
 
-            ${nearbyHTML ? `
+                ${cards}
 
-                <section class="restaurant-category">
-
-                    <div class="category-heading">
-
-                        <div class="category-icon">
-
-                            <i data-lucide="car"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h3>Nearby Villages</h3>
-
-                            <p>
-                                Traditional restaurants in the villages
-                                surrounding Kallepeia.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="restaurant-grid">
-
-                        ${nearbyHTML}
-
-                    </div>
-
-                </section>
-
-            ` : ""}
-
-
-            ${paphosHTML ? `
-
-                <section class="restaurant-category">
-
-                    <div class="category-heading">
-
-                        <div class="category-icon">
-
-                            <i data-lucide="building-2"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h3>Paphos</h3>
-
-                            <p>
-                                Selected restaurants for a day or evening
-                                in Paphos.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="restaurant-grid">
-
-                        ${paphosHTML}
-
-                    </div>
-
-                </section>
-
-            ` : ""}
-
-
-            ${specialHTML ? `
-
-                <section class="restaurant-category">
-
-                    <div class="category-heading">
-
-                        <div class="category-icon">
-
-                            <i data-lucide="sparkles"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h3>Special Dining</h3>
-
-                            <p>
-                                Beautiful settings and memorable choices
-                                for a special meal.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="restaurant-grid">
-
-                        ${specialHTML}
-
-                    </div>
-
-                </section>
-
-            ` : ""}
+            </div>
 
         </section>
 

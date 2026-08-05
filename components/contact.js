@@ -2,7 +2,7 @@ function createContactPage() {
 
     return `
 
-        <section class="welcome-card restaurants-page">
+        <section class="welcome-card contact-page">
 
             <button id="back-button">
 
@@ -12,21 +12,27 @@ function createContactPage() {
 
             </button>
 
+
             <header class="page-intro">
 
                 <span class="page-eyebrow">
-                    Calopes Suites Guest Support
+                    Calopes Suites
                 </span>
 
-                <h2>${contactData.title}</h2>
+                <h2>Contact Us</h2>
 
-                <p>${contactData.message}</p>
+                <p>
+                    We're here whenever you need us during your stay.
+                </p>
 
             </header>
 
-            <div class="contact-info-box">
 
-                <div class="contact-info-icon">
+            <!-- COMPACT INTRO CARD -->
+
+            <div class="contact-intro-card">
+
+                <div class="contact-intro-icon">
 
                     <i data-lucide="heart-handshake"></i>
 
@@ -36,31 +42,6 @@ function createContactPage() {
 
                     <h3>Need assistance?</h3>
 
-                    <p> 
-
-                        Feel free to contact us using any of the
-                        options below.
-
-                    </p>
-
-                </div>
-
-            </div>
-            
-            
-
-            <div class="contact-premium-card">
-
-                <div class="contact-premium-icon">
-
-                    <i data-lucide="headphones"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>How can we help?</h3>
-
                     <p>
                         Choose the most convenient way to contact us.
                     </p>
@@ -69,96 +50,243 @@ function createContactPage() {
 
             </div>
 
-            <div class="contact-actions">
+
+            <!-- CONTACT ACTIONS -->
+
+            <div class="contact-action-list">
+
 
                 ${contactData.phone ? `
 
                     <a
-                        class="contact-button"
                         href="tel:${contactData.phone}"
+                        class="contact-action"
                     >
-                        <i data-lucide="phone"></i>
 
-                        <span>
-                            <strong>Call</strong>
-                            <small>${contactData.phone}</small>
+                        <span class="contact-action-icon">
+
+                            <i data-lucide="phone"></i>
+
                         </span>
+
+                        <span class="contact-action-text">
+
+                            <strong>Call</strong>
+
+                            <small>${contactData.phone}</small>
+
+                        </span>
+
+                        <i
+                            data-lucide="chevron-right"
+                            class="contact-action-arrow"
+                        ></i>
+
                     </a>
 
                 ` : ""}
+
 
                 ${contactData.whatsapp ? `
 
                     <a
-                        class="contact-button"
                         href="https://wa.me/${contactData.whatsapp.replace(/\D/g, "")}"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="contact-action"
                     >
-                        <i data-lucide="message-circle"></i>
 
-                        <span>
-                            <strong>WhatsApp</strong>
-                            <small>Send us a message</small>
+                        <span class="contact-action-icon">
+
+                            <i data-lucide="message-circle"></i>
+
                         </span>
+
+                        <span class="contact-action-text">
+
+                            <strong>WhatsApp</strong>
+
+                            <small>Send us a message</small>
+
+                        </span>
+
+                        <i
+                            data-lucide="chevron-right"
+                            class="contact-action-arrow"
+                        ></i>
+
                     </a>
 
                 ` : ""}
+
 
                 ${contactData.email ? `
 
                     <a
-                        class="contact-button"
                         href="mailto:${contactData.email}"
+                        class="contact-action"
                     >
-                        <i data-lucide="mail"></i>
 
-                        <span>
-                            <strong>Email</strong>
-                            <small>${contactData.email}</small>
+                        <span class="contact-action-icon">
+
+                            <i data-lucide="mail"></i>
+
                         </span>
+
+                        <span class="contact-action-text">
+
+                            <strong>Email</strong>
+
+                            <small>${contactData.email}</small>
+
+                        </span>
+
+                        <i
+                            data-lucide="chevron-right"
+                            class="contact-action-arrow"
+                        ></i>
+
                     </a>
 
                 ` : ""}
 
-        
 
                 ${contactData.mapsLink ? `
 
                     <a
-                        class="contact-button"
                         href="${contactData.mapsLink}"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="contact-action"
                     >
-                        <i data-lucide="navigation"></i>
 
-                        <span>
-                            <strong>Navigate</strong>
-                            <small>Open in Google Maps</small>
+                        <span class="contact-action-icon">
+
+                            <i data-lucide="map-pin"></i>
+
                         </span>
+
+                        <span class="contact-action-text">
+
+                            <strong>Directions</strong>
+
+                            <small>Open in Google Maps</small>
+
+                        </span>
+
+                        <i
+                            data-lucide="chevron-right"
+                            class="contact-action-arrow"
+                        ></i>
+
                     </a>
 
                 ` : ""}
 
             </div>
-            
-            <div class="contact-closing-message">
 
-            <i data-lucide="sparkles"></i>
 
-            <p>
-                Thank you for choosing Calopes Suites.
-                We wish you a wonderful stay in Cyprus.
-            </p>
+            <!-- SOCIAL MEDIA -->
 
-        </div>
-           
+            ${
+                contactData.instagram || contactData.facebook
+                    ? `
+
+                        <section class="social-section">
+
+                            <div class="social-heading">
+
+                                <span></span>
+
+                                <h3>
+                                    ${contactData.socialTitle || "Stay Connected"}
+                                </h3>
+
+                                <span></span>
+
+                            </div>
+
+                            <div class="social-buttons">
+
+
+                                ${contactData.instagram ? `
+
+                                    <a
+                                        href="${contactData.instagram}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="social-button"
+                                    >
+
+                                        <span class="social-button-icon">
+
+                                            <i class="fa-brands fa-instagram"></i>
+
+                                        </span>
+
+                                        <strong>Instagram</strong>
+
+                                        <i
+                                            data-lucide="chevron-right"
+                                            class="social-button-arrow"
+                                        ></i>
+
+                                    </a>
+
+                                ` : ""}
+
+
+                            ${contactData.facebook ? `
+
+                                <a
+                                    href="${contactData.facebook}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="social-button"
+                                >
+
+                                    <span class="social-button-icon">
+
+                                        <i class="fa-brands fa-facebook-f"></i>
+
+                                    </span>
+
+                                    <strong>Facebook</strong>
+
+                                    <i
+                                        data-lucide="chevron-right"
+                                        class="social-button-arrow"
+                                    ></i>
+
+                                </a>
+
+                            ` : ""}
+
+                            </div>
+
+                        </section>
+
+                    `
+                    : ""
+            }
+
+
+            ${contactData.message ? `
+
+                <div class="contact-closing-message">
+
+                    <i data-lucide="heart"></i>
+
+                    <p>
+                        ${contactData.message}
+                    </p>
+
+                </div>
+
+            ` : ""}
 
         </section>
 
     `;
-
-   
 
 }

@@ -2,84 +2,165 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Calopes Guest Hub</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <meta
+        name="description"
+        content="The official digital guest guide for Calopes Suites in Kallepeia, Paphos."
+    >
 
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#7A6A58">
+    <meta
+        name="theme-color"
+        content="#7A6A58"
+    >
+
+    <!-- MAIN STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- PWA -->
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
 </head>
 
 <body>
 
     <div class="app">
 
-    <header class="hero">
+        <!-- =================================
+             HOME HERO
+        ================================== -->
 
-    <img src="images/hero.jpg" alt="Calopes Suites">
+        <header class="home-hero">
 
-    <div class="hero-overlay">
+            <img
+                src="images/hero.jpg"
+                alt="The courtyard of Calopes Suites"
+                class="home-hero-image"
+            >
 
-        <h1>Calopes Suites</h1>
+            <div
+                class="home-hero-shade"
+                aria-hidden="true"
+            ></div>
 
-        <p>Kallepia</p>
+            <div class="home-hero-content">
 
-        <span>Welcome to your Guest Hub</span>
+                <span class="home-hero-location">
+                    Kallepeia · Paphos
+                </span>
+
+                <h1>
+                    Calopes Suites
+                </h1>
+
+                <p>
+                    Your peaceful village stay in Cyprus
+                </p>
+
+            </div>
+
+        </header>
+
+        <!-- =================================
+             CONTENT
+        ================================== -->
+
+        <main class="content">
+
+            <!-- DIVIDER -->
+
+            <div
+                class="home-brand-divider"
+                aria-hidden="true"
+            >
+
+                <span class="home-brand-line"></span>
+
+                <span class="home-brand-name">
+                    Your Guest Guide
+                </span>
+
+                <span class="home-brand-line"></span>
+
+            </div>
+
+            <!-- MENU -->
+
+            <section
+                id="menu"
+                class="menu"
+                aria-label="Guest Hub menu"
+            ></section>
+
+            <!-- DYNAMIC PAGE -->
+
+            <div id="page-container"></div>
+
+        </main>
 
     </div>
 
-</header>
+    <!-- =================================
+         LUCIDE ICONS
+    ================================== -->
 
-    </header>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <main class="content">
-    <section class="welcome-card" id="welcome-section">
-        <h2>Welcome 👋</h2>
+    <!-- =================================
+         DATA
+    ================================== -->
 
-        <p>
-            Thank you for choosing Calopes Suites.
-            We hope you enjoy your stay in Kallepia.
-            Everything you need is just a tap away.
-        </p>
+    <script src="data/site.js"></script>
+    <script src="data/menu.js"></script>
+    <script src="data/restaurants.js"></script>
+    <script src="data/beaches.js"></script>
+    <script src="data/places.js"></script>
+    <script src="data/useful.js"></script>
+    <script src="data/contact.js"></script>
+    <script src="data/review.js"></script>
 
-    </section>
+    <!-- =================================
+         COMPONENTS
+    ================================== -->
 
-    <section class="menu" id="menu"></section>
+    <script src="components/pageHeader.js"></script>
 
-    <div id="page-container"></div>
-    </section>
+    <script src="components/placeCard.js"></script>
+    <script src="components/restaurants.js"></script>
+    <script src="components/beaches.js"></script>
+    <script src="components/places.js"></script>
+    <script src="components/useful.js"></script>
+    <script src="components/contact.js"></script>
+    <script src="components/review.js"></script>
 
-    </main>
+    <!-- =================================
+         APP
+    ================================== -->
 
-</div>
-
-
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<script src="data/site.js"></script>
-<script src="data/menu.js"></script>
-<script src="data/wifi.js"></script>
-<script src="data/restaurants.js"></script>
-<script src="data/beaches.js"></script>
-<script src="data/places.js"></script>
-<script src="data/contact.js"></script>
-<script src="data/review.js"></script>
-
-
-<script src="components/wifi.js"></script>
-<script src="components/placeCard.js"></script>
-<script src="components/restaurants.js"></script>
-<script src="components/beaches.js"></script>
-<script src="components/places.js"></script>
-<script src="components/contact.js"></script>
-<script src="components/review.js"></script>
-
-
-
-<script src="js/app.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
