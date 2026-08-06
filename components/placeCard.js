@@ -13,7 +13,7 @@ function createPlaceCard(place) {
                     loading="lazy"
                     onerror="
                         this.onerror = null;
-                        this.src = 'images/restaurants/restaurant-placeholder.jpg';
+                        this.src = 'images/hero.jpg';
                     "
                 >
 

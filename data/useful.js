@@ -86,8 +86,7 @@ const usefulData = {
                 "images/useful/lidl.jpg",
 
             mapsLink:
-                "https://www.google.com/maps/search/?api=1&query=Lidl+Hellados+Avenue+Paphos+Cyprus",
-
+                "https://www.google.com/maps/place/Lidl/@34.7930574,32.436439,15.78z/data=!4m6!3m5!1s0x14e7066ded12548b:0x7ce5da7d76a5ffae!8m2!3d34.79074!4d32.43418!16s%2Fg%2F11cm_gzrxp?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
             phone: "",
 
             website: ""
@@ -115,7 +114,7 @@ const usefulData = {
                 "images/useful/sklavenitis.jpg",
 
             mapsLink:
-                "https://www.google.com/maps/search/?api=1&query=Sklavenitis+Pafos+II+1+Hellados+Avenue+Paphos",
+                "https://www.google.com/maps/place/%CE%A3%CE%9A%CE%9B%CE%91%CE%92%CE%95%CE%9D%CE%99%CE%A4%CE%97%CE%A3+%CE%A0%CE%AC%CF%86%CE%BF%CF%82/@34.7884663,32.431533,17z/data=!3m1!4b1!4m6!3m5!1s0x14e7066e397a9319:0xff1cb94751ad1a9a!8m2!3d34.7884663!4d32.4341079!16s%2Fg%2F1tjjrl_x?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
 
             phone:
                 "+35726936600",

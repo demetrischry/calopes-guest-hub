@@ -26,8 +26,7 @@ const placesData = [
             "images/places/kallepeia.jpg",
 
         mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Kallepeia+Village+Centre+Cyprus",
-
+            "https://www.google.com/maps/dir//%CE%9A%CE%B1%CE%BB%CE%BB%CE%AD%CF%80%CE%B5%CE%B9%CE%B1,+%CE%A0%CE%AC%CF%86%CE%BF%CF%82+8541,+%CE%9A%CF%8D%CF%80%CF%81%CE%BF%CF%82/@34.8397806,32.4712029,13z/data=!4m19!1m9!3m8!1s0x14e70e5a66a9ade1:0x6902de346f48e2aa!2zzprOsc67zrvOrc-AzrXOuc6xLCDOoM6sz4bOv8-CIDg1NDEsIM6az43PgM-Bzr_Pgg!3b1!8m2!3d34.8461805!4d32.5006167!15sCh9LYWxsZXBlaWEgVmlsbGFnZSBDZW50cmUgQ3lwcnVzkgEIbG9jYWxpdHngAQA!16s%2Fm%2F065_lj6!4m8!1m0!1m5!1m1!1s0x14e70e5a66a9ade1:0x6902de346f48e2aa!2m2!1d32.5006167!2d34.8461805!3e3?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
         phone: "",
 
         website: ""
@@ -55,7 +54,7 @@ const placesData = [
             "images/places/agiosgeorgios.jpg",
 
         mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Agios+Georgios+Church+Kallepeia+Cyprus",
+            "https://www.google.com/maps/place/%CE%99%CE%B5%CF%81%CF%8C%CF%82+%CE%9D%CE%B1%CF%8C%CF%82+%CE%91%CE%B3%CE%AF%CE%BF%CF%85+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85,+%CE%9A%CE%B1%CE%BB%CE%BB%CE%AD%CF%80%CE%B5%CE%B9%CE%B1/@34.8458983,32.5000951,17.64z/data=!4m23!1m16!4m15!1m6!1m2!1s0x14e70f616f343787:0xa2e7db2c84f25265!2zzpnOtc-Bz4zPgiDOnc6xz4zPgiDOkc6zzq_Ov8-FIM6TzrXPic-BzrPOr86_z4UsIM6azrHOu867zq3PgM61zrnOsSwgUkdXMitGNkgsIM6azrHOu867zq3PgM61zrnOsSwgzqDOrM-Gzr_PgiA4NTQxLCDOms-Nz4DPgc6_z4I!2m2!1d32.5009777!2d34.8461407!1m6!1m2!1s0x14e70f616f343787:0xa2e7db2c84f25265!2zzpnOtc-Bz4zPgiDOnc6xz4zPgiDOkc6zzq_Ov8-FIM6TzrXPic-BzrPOr86_z4UsIM6azrHOu867zq3PgM61zrnOsSwgUkdXMitGNkgsIM6azrHOu867zq3PgM61zrnOsSwgzqDOrM-Gzr_PgiA4NTQxLCDOms-Nz4DPgc6_z4I!2m2!1d32.5009777!2d34.8461407!3e3!3m5!1s0x14e70f616f343787:0xa2e7db2c84f25265!8m2!3d34.8461407!4d32.5009777!16s%2Fg%2F11l1n8sjx0?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
 
         phone: "",
 
@@ -84,7 +83,7 @@ const placesData = [
             "images/places/monastiri.jpg",
 
         mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Monastery+of+the+Holy+Cross+Kallepeia+Cyprus",
+            "https://www.google.com/maps/place/%CE%91%CF%81%CF%87%CE%B1%CE%AF%CE%BF+%CE%9C%CE%BD%CE%B7%CE%BC%CE%B5%CE%AF%CE%BF+%CE%A4%CE%B9%CE%BC%CE%AF%CE%BF%CF%85+%CE%A3%CF%84%CE%B1%CF%85%CF%81%CE%BF%CF%8D+%CE%9C%CE%BF%CE%BD%CE%B1%CF%83%CF%84%CE%B7%CF%81%CE%BF%CF%8D%CE%B9+(%CE%B5%CF%81%CE%B5%CE%AF%CF%80%CE%B9%CE%B1)/@34.8463437,32.5000076,18z/data=!4m9!1m2!2m1!1sMonastery+of+the+Holy+Cross+Kallepeia+Cyprus!3m5!1s0x14e70f0033d1590d:0x44f2eaee2835c439!8m2!3d34.8463438!4d32.501841!16s%2Fg%2F11wv7ybf5y?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
 
         phone: "",
 

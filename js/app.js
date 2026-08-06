@@ -304,54 +304,33 @@ history.replaceState(
     window.location.pathname
 );
 
-
 // =================================
-// DEVELOPMENT MODE
-// REMOVE OLD SERVICE WORKERS/CACHES
+// SERVICE WORKER REGISTRATION
 // =================================
 
 if ("serviceWorker" in navigator) {
 
-    window.addEventListener(
-        "load",
-        async function () {
+    window.addEventListener("load", function () {
 
-            try {
-
-                const registrations =
-                    await navigator
-                        .serviceWorker
-                        .getRegistrations();
-
-                for (const registration of registrations) {
-
-                    await registration.unregister();
-
-                }
-
-                const cacheNames =
-                    await caches.keys();
-
-                for (const cacheName of cacheNames) {
-
-                    await caches.delete(cacheName);
-
-                }
+        navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(function (registration) {
 
                 console.log(
-                    "Development mode: old service workers and caches removed."
+                    "Service Worker registered successfully:",
+                    registration.scope
                 );
 
-            } catch (error) {
+            })
+            .catch(function (error) {
 
                 console.error(
-                    "Could not clear old service worker data:",
+                    "Service Worker registration failed:",
                     error
                 );
 
-            }
+            });
 
-        }
-    );
+    });
 
 }

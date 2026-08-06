@@ -153,7 +153,7 @@ const restaurantsData = [
 
         phone: "",
 
-        website: ""
+        website: "https://pagkratios.com"
     },
 
     {
@@ -306,9 +306,9 @@ const restaurantsData = [
     mapsLink:
         "https://www.google.com/maps/place/Ethos+Vin/@34.7778815,32.4207096,17z/data=!4m15!1m8!3m7!1s0x14e7074137c13419:0x8f291d164ff58b16!2sEthos+Vin!8m2!3d34.7778479!4d32.4207608!10e9!16s%2Fg%2F11xcnk2034!3m5!1s0x14e7074137c13419:0x8f291d164ff58b16!8m2!3d34.7778479!4d32.4207608!16s%2Fg%2F11xcnk2034?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
 
-    phone: "",
+    phone: "+357 26 933000",
 
-    website: ""
+    website: "https://www.ethosvin.com"
 },
 
     {
