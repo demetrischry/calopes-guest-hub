@@ -25,7 +25,7 @@ const usefulData = {
                 "A convenient local fruit market in nearby Tsada, ideal for fresh fruit, vegetables, local produce and everyday groceries without travelling into Paphos.",
 
             image:
-                "images/useful/froutaria-theofanis.jpg",
+                "images/useful/theofanis.jpg",
 
             mapsLink:
                 "https://www.google.com/maps/search/?api=1&query=Froutaria+Theofanis+Tsada+Cyprus",
@@ -54,7 +54,7 @@ const usefulData = {
                 "A convenient neighbourhood supermarket in Mesogi offering fresh fruit and vegetables, groceries, drinks and everyday essentials. A useful stop on your way to or from Calopes Suites.",
 
             image:
-                "images/useful/express-supermarket-fruitmarket.jpg",
+                "images/useful/express.jpg",
 
             mapsLink:
                 "https://www.google.com/maps/place/Express+Supermarket+%E2%80%A2+Fruitmarket/@34.8151352,32.4523172,18.22z/data=!4m6!3m5!1s0x14e70f53efdac009:0x638bea388b3e7ce!8m2!3d34.8156107!4d32.4513927!16s%2Fg%2F11c0x5qzxs?entry=ttu&g_ep=EgoyMDI2MDgwMi4wIKXMDSoASAFQAw%3D%3D",
@@ -83,7 +83,7 @@ const usefulData = {
                 "A familiar and affordable supermarket offering groceries, fresh bakery products, household supplies and everyday essentials. A practical choice for quick or budget-friendly shopping.",
 
             image:
-                "images/useful/lidl-paphos.jpg",
+                "images/useful/lidl.jpg",
 
             mapsLink:
                 "https://www.google.com/maps/search/?api=1&query=Lidl+Hellados+Avenue+Paphos+Cyprus",
@@ -112,7 +112,7 @@ const usefulData = {
                 "A large supermarket with fresh produce, meat, bakery products, ready meals, household items and everything needed for a complete grocery shop during your stay.",
 
             image:
-                "images/useful/sklavenitis-paphos.jpg",
+                "images/useful/sklavenitis.jpg",
 
             mapsLink:
                 "https://www.google.com/maps/search/?api=1&query=Sklavenitis+Pafos+II+1+Hellados+Avenue+Paphos",
@@ -143,7 +143,7 @@ const usefulData = {
                 "A convenient bakery for fresh bread, pastries, cakes, sandwiches, coffee and takeaway food. Ideal for breakfast, a quick snack or something easy to enjoy at the suites.",
 
             image:
-                "images/useful/papantoniou-bakery-mesogi.jpg",
+                "images/useful/papantoniou.jpg",
 
             mapsLink:
                 "https://www.google.com/maps/place/%CE%A0%CE%B1%CF%80%CE%B1%CE%BD%CF%84%CF%89%CE%BD%CE%AF%CE%BF%CF%85+%CE%91%CF%81%CF%84%CE%BF%CE%B6%CE%B1%CF%87%CE%B1%CF%81%CE%BF%CF%80%CE%BB%CE%B1%CF%83%CF%84%CE%B5%CE%AF%CE%BF/@34.8161189,32.451718,19.37z/data=!4m6!3m5!1s0x14e70f00544be069:0x71580d5278e3bd04!8m2!3d34.8164976!4d32.4513518!16s%2Fg%2F11y86t2jcl?entry=ttu&g_ep=EgoyMDI2MDgwMi4wIKXMDSoASAFQAw%3D%3D",
@@ -211,7 +211,7 @@ const usefulData = {
                 "The main public hospital serving the Paphos district, providing emergency treatment and a wide range of medical services. For a serious or life-threatening emergency, call 112.",
 
             image:
-                "images/useful/paphos-general-hospital.jpg",
+                "images/useful/hospital.jpg",
 
             mapsLink:
                 "https://www.google.com/maps/search/?api=1&query=Paphos+General+Hospital+Anavargos+Cyprus",

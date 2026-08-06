@@ -82,7 +82,7 @@ const restaurantsData = [
             "A family-run tavern where traditional recipes and genuine Cypriot hospitality come together in the heart of Kallepeia.",
 
         image:
-            "images/restaurants/christaki.jpg",
+            "images/restaurants/xristaki.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Taverna+Tou+Christaki+Kallepeia+Cyprus",
@@ -282,34 +282,34 @@ const restaurantsData = [
             "https://www.minthisresort.com/dining/"
     },
 
-    {
-        name: "Noiro by the Sea",
+{
+    name: "Ethos Vin",
 
-        category: "premium",
+    category: "premium",
 
-        badge: "Sea View",
+    badge: "Wine & Dining",
 
-        location: "Paphos Coast",
+    location: "Paphos",
 
-        subtitle: "Mediterranean Seaside Dining",
+    subtitle: "Mediterranean Restaurant & Wine Bar",
 
-        typeIcon: "utensils",
+    typeIcon: "utensils",
 
-        distance: "35 min",
+    distance: "25 min",
 
-        description:
-            "Stylish seaside dining with beautiful coastal views, a relaxed atmosphere and Mediterranean-inspired flavours.",
+    description:
+        "A stylish restaurant and wine bar in the heart of Paphos, offering Mediterranean cuisine, carefully selected wines and an elegant atmosphere. Perfect for a romantic dinner or a special evening with friends.",
 
-        image:
-            "images/restaurants/noiro-by-the-sea.jpg",
+    image:
+        "images/restaurants/ethos.jpg",
 
-        mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Noiro+by+the+Sea+Paphos+Cyprus",
+    mapsLink:
+        "https://www.google.com/maps/place/Ethos+Vin/@34.7778815,32.4207096,17z/data=!4m15!1m8!3m7!1s0x14e7074137c13419:0x8f291d164ff58b16!2sEthos+Vin!8m2!3d34.7778479!4d32.4207608!10e9!16s%2Fg%2F11xcnk2034!3m5!1s0x14e7074137c13419:0x8f291d164ff58b16!8m2!3d34.7778479!4d32.4207608!16s%2Fg%2F11xcnk2034?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
 
-        phone: "",
+    phone: "",
 
-        website: ""
-    },
+    website: ""
+},
 
     {
         name: "Duomo Restaurant",

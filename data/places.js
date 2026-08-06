@@ -23,7 +23,7 @@ const placesData = [
             "Discover the authentic character of Kallepeia through its peaceful streets, traditional stone houses and relaxed village atmosphere. A lovely place for a quiet walk close to Calopes Suites.",
 
         image:
-            "images/places/kallepeia-village-centre.jpg",
+            "images/places/kallepeia.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Kallepeia+Village+Centre+Cyprus",
@@ -52,7 +52,7 @@ const placesData = [
             "A historic church in the heart of Kallepeia, closely connected to the life and traditions of the local community. Worth visiting while exploring the village centre.",
 
         image:
-            "images/places/agios-georgios-church.jpg",
+            "images/places/agiosgeorgios.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Agios+Georgios+Church+Kallepeia+Cyprus",
@@ -81,7 +81,7 @@ const placesData = [
             "A peaceful religious site surrounded by the countryside of Kallepeia. Its quiet setting and local significance make it a meaningful stop during your visit to the village.",
 
         image:
-            "images/places/monastery-holy-cross.jpg",
+            "images/places/monastiri.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Monastery+of+the+Holy+Cross+Kallepeia+Cyprus",
@@ -115,7 +115,7 @@ const placesData = [
             "A historic monastery set within the peaceful countryside near Tsada. Its traditional architecture and quiet surroundings offer a calm cultural stop close to Calopes Suites.",
 
         image:
-            "images/places/minthis-monastery.jpg",
+            "images/places/minthis.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Minthis+Monastery+Tsada+Cyprus",
@@ -144,7 +144,7 @@ const placesData = [
             "A peaceful historic monastery famous for its rock-carved hermitage, religious artwork and beautiful natural surroundings. One of the most important cultural sites near Paphos.",
 
         image:
-            "images/places/saint-neophytos-monastery.jpg",
+            "images/places/agiosneofutos.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Saint+Neophytos+Monastery+Paphos+Cyprus",
@@ -173,7 +173,7 @@ const placesData = [
             "An impressive ancient burial complex carved into solid rock, offering a fascinating look into the history of Paphos. Its underground chambers and open courtyards make it one of the area's most memorable landmarks.",
 
         image:
-            "images/places/tombs-of-the-kings.jpg",
+            "images/places/tafoivasileon.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Tombs+of+the+Kings+Paphos+Cyprus",
@@ -304,33 +304,5 @@ const placesData = [
         website: ""
     },
 
-    {
-        name: "Sea Caves",
-
-        category: "nature",
-
-        badge: "Coastal Cliffs",
-
-        location: "Peyia",
-
-        subtitle: "Sea Views & Rock Formations",
-
-        typeIcon: "waves",
-
-        distance: "35 min",
-
-        description:
-            "A dramatic stretch of coastline with natural rock formations, sea caves and wide Mediterranean views. An excellent place for photography and a scenic coastal walk.",
-
-        image:
-            "images/places/sea-caves.jpg",
-
-        mapsLink:
-            "https://www.google.com/maps/search/?api=1&query=Sea+Caves+Peyia+Cyprus",
-
-        phone: "",
-
-        website: ""
-    }
 
 ];

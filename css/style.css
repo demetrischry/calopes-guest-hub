@@ -2850,3 +2850,73 @@ button {
     }
 
 }
+
+/* =================================
+   REVIEW CARDS — SAFE CLICK AREAS
+   Prevents any card or button from overlapping another.
+================================= */
+
+.review-platform-list {
+    position: relative;
+    isolation: isolate;
+}
+
+.review-platform-card {
+    position: relative;
+    z-index: 0;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    contain: layout paint;
+}
+
+.review-platform-card + .review-platform-card {
+    margin-top: 0;
+}
+
+.review-platform-card::before,
+.review-platform-card::after {
+    pointer-events: none;
+}
+
+.review-platform-button {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    max-width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: auto;
+    touch-action: manipulation;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.review-platform-button:link,
+.review-platform-button:visited,
+.review-platform-button:hover,
+.review-platform-button:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.google-review-card,
+.booking-review-card {
+    position: relative;
+    z-index: 0;
+}
+
+.google-review-button,
+.booking-review-button {
+    position: relative;
+    z-index: 10;
+}

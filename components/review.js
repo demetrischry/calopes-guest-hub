@@ -87,17 +87,19 @@ function createReviewsPage() {
                             ? `
 
                                 <a
-                                    href="${reviewsData.google.link}"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="review-platform-button google-review-button"
-                                >
+                                    
+                                        href="${reviewsData.google.link}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="review-platform-button google-review-button"
+                                        onclick="event.stopPropagation();"
+                                    >
+                                        <i data-lucide="star"></i>
 
-                                    <i data-lucide="star"></i>
+                                        ${reviewsData.google.buttonText}
+                                    </a>
 
-                                    ${reviewsData.google.buttonText}
-
-                                </a>
+                               
 
                             `
                             : `

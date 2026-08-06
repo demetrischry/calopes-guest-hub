@@ -19,7 +19,7 @@ const reviewsData = {
             "Rate Your Stay on Google",
 
         link:
-            "https://www.google.com/maps/place/The+Calopes+Suites/@34.8458108,32.4972128,17z/data=!3m1!4b1!4m6!3m5!1s0x14e70f89d1a8ae2d:0x9a2befdfbcbb6453!8m2!3d34.8458108!4d32.4997877!16s%2Fg%2F11whynm_11"
+            "https://search.google.com/local/reviews?placeid=ChIJLa6o0YkP5xQRU2S7vN_vK5o"
     },
 
     booking: {

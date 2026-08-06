@@ -52,7 +52,7 @@ const beachesData = [
             "A quieter beach with a peaceful atmosphere, ideal for guests looking to unwind away from the busiest tourist areas while enjoying the beautiful Mediterranean coast.",
 
         image:
-            "images/beaches/sandy-beach.jpg",
+            "images/beaches/sandy.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Sandy+Beach+Paphos+Cyprus",
@@ -81,7 +81,7 @@ const beachesData = [
             "A beautiful beach near Latchi with crystal-clear waters and a relaxed atmosphere. An excellent stop for swimming while exploring the stunning coastline of Polis Chrysochous.",
 
         image:
-            "images/beaches/yiannakis-beach.jpg",
+            "images/beaches/yiannakis.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Yiannakis+Beach+Latchi+Cyprus",
@@ -115,7 +115,7 @@ const beachesData = [
             "One of Cyprus' most unspoilt beaches, surrounded by the breathtaking Akamas Peninsula. A unique destination for nature lovers seeking peace and untouched beauty.",
 
         image:
-            "images/beaches/lara-beach.jpg",
+            "images/beaches/lara.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Lara+Beach+Akamas+Cyprus",
@@ -144,7 +144,7 @@ const beachesData = [
             "Famous for its incredible turquoise waters, Blue Lagoon is one of the most memorable swimming spots in Cyprus. Best experienced as part of a boat trip from Latchi Harbour.",
 
         image:
-            "images/beaches/blue-lagoon.jpg",
+            "images/beaches/lagoon.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Blue+Lagoon+Akamas+Cyprus",
@@ -173,7 +173,7 @@ const beachesData = [
             "The legendary birthplace of Aphrodite and one of Cyprus' most famous landmarks. A spectacular place to admire dramatic sea views and unforgettable sunsets.",
 
         image:
-            "images/beaches/aphrodites-rock.jpg",
+            "images/beaches/petraromiou.jpg",
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Aphrodite%27s+Rock+Cyprus",

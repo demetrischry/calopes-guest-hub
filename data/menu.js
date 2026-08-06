@@ -36,10 +36,10 @@ const menuItems = [
     },
 
     {
-        page: "review",
-        title: "Share Your Experience",
-        description: "Leave a review",
-        icon: "star"
+    title: "Share Your Experience",
+    description: "Leave a review",
+    icon: "star",
+    page: "review"
     }
 
 ];

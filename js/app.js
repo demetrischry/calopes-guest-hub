@@ -120,49 +120,40 @@ function showPage(page, updateHistory = true) {
     lucide.createIcons();
 
     pageContainer.scrollIntoView({
-
         behavior: "smooth",
-
         block: "start"
-
     });
 
     if (updateHistory) {
 
         history.pushState(
-
             { page: page },
-
             "",
-
             `#${page}`
-
         );
 
     }
 
-    const backButton = document.getElementById("back-button");
+    const backButton =
+        document.getElementById("back-button");
 
     if (backButton) {
 
         backButton.addEventListener(
-
             "click",
-
             function () {
 
                 history.back();
 
             }
-
         );
 
     }
 
 
-    // ===============================
+    // =================================
     // CONTACT BUTTON INSIDE USEFUL PAGE
-    // ===============================
+    // =================================
 
     const usefulContactButton =
         document.getElementById("useful-contact-button");
@@ -170,15 +161,12 @@ function showPage(page, updateHistory = true) {
     if (usefulContactButton) {
 
         usefulContactButton.addEventListener(
-
             "click",
-
             function () {
 
                 showPage("contact");
 
             }
-
         );
 
     }
@@ -205,11 +193,8 @@ function goHome(updateHistory = true) {
     menu.classList.add("menu-transition");
 
     window.scrollTo({
-
         top: 0,
-
         behavior: "smooth"
-
     });
 
     lucide.createIcons();
@@ -217,13 +202,9 @@ function goHome(updateHistory = true) {
     if (updateHistory) {
 
         history.pushState(
-
             { page: "home" },
-
             "",
-
             window.location.pathname
-
         );
 
     }
@@ -236,19 +217,21 @@ function goHome(updateHistory = true) {
 // =================================
 
 menu.addEventListener(
-
     "click",
-
     function (event) {
 
-        const card = event.target.closest(".menu-card");
+        const card =
+            event.target.closest(".menu-card");
 
-        if (!card) return;
+        if (!card) {
+            return;
+        }
 
-        showPage(card.dataset.page);
+        const page = card.dataset.page;
+
+        showPage(page);
 
     }
-
 );
 
 
@@ -257,50 +240,46 @@ menu.addEventListener(
 // =================================
 
 menu.addEventListener(
-
     "keydown",
-
     function (event) {
 
         if (
-
             event.key !== "Enter" &&
-
             event.key !== " "
+        ) {
+            return;
+        }
 
-        ) return;
+        const card =
+            event.target.closest(".menu-card");
 
-        const card = event.target.closest(".menu-card");
-
-        if (!card) return;
+        if (!card) {
+            return;
+        }
 
         event.preventDefault();
 
-        showPage(card.dataset.page);
+        const page = card.dataset.page;
+
+        showPage(page);
 
     }
-
 );
 
 
 // =================================
-// BROWSER BACK BUTTON
+// BROWSER / MOBILE BACK BUTTON
 // =================================
 
 window.addEventListener(
-
     "popstate",
-
     function (event) {
 
         const page = event.state?.page;
 
         if (
-
             page &&
-
             page !== "home"
-
         ) {
 
             showPage(page, false);
@@ -312,7 +291,6 @@ window.addEventListener(
         }
 
     }
-
 );
 
 
@@ -321,32 +299,29 @@ window.addEventListener(
 // =================================
 
 history.replaceState(
-
     { page: "home" },
-
     "",
-
     window.location.pathname
-
 );
 
 
 // =================================
 // DEVELOPMENT MODE
+// REMOVE OLD SERVICE WORKERS/CACHES
 // =================================
 
 if ("serviceWorker" in navigator) {
 
     window.addEventListener(
-
         "load",
-
         async function () {
 
             try {
 
                 const registrations =
-                    await navigator.serviceWorker.getRegistrations();
+                    await navigator
+                        .serviceWorker
+                        .getRegistrations();
 
                 for (const registration of registrations) {
 
@@ -364,19 +339,19 @@ if ("serviceWorker" in navigator) {
                 }
 
                 console.log(
-                    "Development mode: old service workers removed."
+                    "Development mode: old service workers and caches removed."
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "Could not clear old service worker data:",
+                    error
                 );
 
             }
 
-            catch (error) {
-
-                console.error(error);
-
-            }
-
         }
-
     );
 
 }
