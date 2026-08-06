@@ -1,4 +1,4 @@
-const CACHE_NAME = "calopes-guest-hub-v2";
+const CACHE_NAME = "calopes-guest-hub-v3";
 
 const FILES_TO_CACHE = [
     "./",
