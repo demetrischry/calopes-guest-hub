@@ -303,3 +303,39 @@ history.replaceState(
     "",
     window.location.pathname
 );
+
+// =================================
+// SERVICE WORKER
+// =================================
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", async function () {
+
+        try {
+
+            const registration =
+                await navigator.serviceWorker.register(
+                    "./service-worker.js"
+                );
+
+            console.log(
+                "Service Worker registered:",
+                registration.scope
+            );
+
+            // Ζητάμε έλεγχο για νέα έκδοση του worker
+            registration.update();
+
+        } catch (error) {
+
+            console.error(
+                "Service Worker registration failed:",
+                error
+            );
+
+        }
+
+    });
+
+}

@@ -1,11 +1,17 @@
-const CACHE_NAME = "calopes-guest-hub-v3";
+// =================================
+// CALOPES GUEST HUB SERVICE WORKER
+// =================================
 
-const FILES_TO_CACHE = [
+const CACHE_NAME = "calopes-guest-hub-v4";
+
+const APP_SHELL = [
+
     "./",
     "./index.html",
     "./manifest.json",
 
     "./css/style.css",
+
     "./js/app.js",
 
     "./data/site.js",
@@ -30,39 +36,60 @@ const FILES_TO_CACHE = [
 
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png"
+
 ];
+
+
+// =================================
+// INSTALL
+// =================================
 
 self.addEventListener("install", function (event) {
 
     event.waitUntil(
+
         caches
             .open(CACHE_NAME)
             .then(function (cache) {
 
-                return cache.addAll(FILES_TO_CACHE);
+                return cache.addAll(APP_SHELL);
 
             })
+
     );
 
     self.skipWaiting();
 
 });
 
+
+// =================================
+// ACTIVATE
+// =================================
+
 self.addEventListener("activate", function (event) {
 
     event.waitUntil(
+
         caches
             .keys()
             .then(function (cacheNames) {
 
                 return Promise.all(
+
                     cacheNames.map(function (cacheName) {
 
-                        if (cacheName !== CACHE_NAME) {
+                        if (
+                            cacheName.startsWith("calopes-guest-hub-") &&
+                            cacheName !== CACHE_NAME
+                        ) {
+
                             return caches.delete(cacheName);
+
                         }
 
                     })
+
                 );
 
             })
@@ -71,24 +98,68 @@ self.addEventListener("activate", function (event) {
                 return self.clients.claim();
 
             })
+
     );
 
 });
 
+
+// =================================
+// FETCH — NETWORK FIRST
+// =================================
+
 self.addEventListener("fetch", function (event) {
 
-    if (event.request.method !== "GET") {
+    const request = event.request;
+
+    // Μόνο GET requests
+    if (request.method !== "GET") {
+        return;
+    }
+
+    const requestURL = new URL(request.url);
+
+    // Δεν πειράζουμε εξωτερικά resources
+    // όπως Lucide / Font Awesome / Google Fonts
+    if (requestURL.origin !== self.location.origin) {
         return;
     }
 
     event.respondWith(
-        caches
-            .match(event.request)
-            .then(function (cachedResponse) {
 
-                return cachedResponse || fetch(event.request);
+        fetch(request, {
+            cache: "no-store"
+        })
+
+            .then(function (networkResponse) {
+
+                // Κρατάμε τη νέα έκδοση στην cache
+                const responseClone =
+                    networkResponse.clone();
+
+                caches
+                    .open(CACHE_NAME)
+                    .then(function (cache) {
+
+                        cache.put(
+                            request,
+                            responseClone
+                        );
+
+                    });
+
+                return networkResponse;
 
             })
+
+            .catch(function () {
+
+                // Αν δεν υπάρχει internet,
+                // χρησιμοποιούμε την τελευταία cached έκδοση
+                return caches.match(request);
+
+            })
+
     );
 
 });
