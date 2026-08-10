@@ -361,12 +361,17 @@ button {
 
 .restaurant-card {
     width: 100%;
-    min-width: 0;
     overflow: hidden;
-    background: #FFFFFF;
-    border: 1px solid var(--border-color);
+
+    background: #ffffff;
+
+    border: 1px solid rgba(61, 53, 46, 0.08);
     border-radius: 22px;
-    box-shadow: var(--shadow-card);
+
+    box-shadow: 0 10px 28px rgba(61, 53, 46, 0.09);
+
+    display: block;
+
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -452,14 +457,41 @@ button {
 }
 
 .restaurant-distance {
-    top: 56px;
-}
+    position: absolute;
 
-.restaurant-rating svg,
+    top: 16px;
+    right: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 8px 12px;
+
+    background: rgba(255,255,255,.96);
+    color: var(--text-color);
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+
+    z-index: 5;
+}
 .restaurant-distance svg {
+
     width: 15px;
     height: 15px;
+
     flex-shrink: 0;
+
+    position: relative;
+    top: -1px;
+
 }
 
 .restaurant-rating svg {

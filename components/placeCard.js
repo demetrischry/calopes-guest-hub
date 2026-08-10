@@ -21,7 +21,7 @@ function createPlaceCard(place) {
 
                     <span class="restaurant-distance">
 
-                        <i data-lucide="car"></i>
+                        <i data-lucide="${place.distanceIcon || 'car'}"></i>
 
                         ${place.distance}
 
@@ -30,6 +30,7 @@ function createPlaceCard(place) {
                 ` : ""}
 
             </div>
+
 
             <div class="restaurant-content">
 
@@ -41,9 +42,11 @@ function createPlaceCard(place) {
 
                 ` : ""}
 
+
                 <h3 class="restaurant-name">
                     ${place.name}
                 </h3>
+
 
                 <div class="restaurant-details">
 
@@ -59,13 +62,14 @@ function createPlaceCard(place) {
 
                     ` : ""}
 
-                    ${place.subtitle ? `
+
+                    ${(place.subtitle || place.cuisine) ? `
 
                         <span>
 
-                            <i data-lucide="${place.typeIcon || "info"}"></i>
+                            <i data-lucide="${place.typeIcon || 'utensils'}"></i>
 
-                            ${place.subtitle}
+                            ${place.subtitle || place.cuisine}
 
                         </span>
 
@@ -73,13 +77,38 @@ function createPlaceCard(place) {
 
                 </div>
 
+
                 ${place.description ? `
 
                     <p class="restaurant-description">
+
                         ${place.description}
+
                     </p>
 
                 ` : ""}
+
+
+                ${place.recommendation ? `
+
+                    <div class="recommendation-box">
+
+                        <div class="recommendation-title">
+
+                            <i data-lucide="sparkles"></i>
+
+                            <span>Why We Love It</span>
+
+                        </div>
+
+                        <p>
+                            ${place.recommendation}
+                        </p>
+
+                    </div>
+
+                ` : ""}
+
 
                 <div class="restaurant-buttons">
 
@@ -94,11 +123,12 @@ function createPlaceCard(place) {
 
                             <i data-lucide="navigation"></i>
 
-                            Get Directions
+                            Directions
 
                         </a>
 
                     ` : ""}
+
 
                     ${place.phone ? `
 
@@ -114,6 +144,7 @@ function createPlaceCard(place) {
                         </a>
 
                     ` : ""}
+
 
                     ${place.website ? `
 

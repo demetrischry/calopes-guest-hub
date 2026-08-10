@@ -17,7 +17,8 @@ const placesData = [
 
         typeIcon: "house",
 
-        distance: "2 min",
+        distance: "1 min walk",
+        distanceIcon: "footprints",
 
         description:
             "Discover the authentic character of Kallepeia through its peaceful streets, traditional stone houses and relaxed village atmosphere. A lovely place for a quiet walk close to Calopes Suites.",
@@ -45,7 +46,8 @@ const placesData = [
 
         typeIcon: "church",
 
-        distance: "2 min",
+        distance: "3 min walk",
+        distanceIcon: "footprints",
 
         description:
             "A historic church in the heart of Kallepeia, closely connected to the life and traditions of the local community. Worth visiting while exploring the village centre.",
@@ -74,7 +76,8 @@ const placesData = [
 
         typeIcon: "church",
 
-        distance: "5 min",
+        distance: "6 min walk",
+        distanceIcon: "footprints",
 
         description:
             "A peaceful religious site surrounded by the countryside of Kallepeia. Its quiet setting and local significance make it a meaningful stop during your visit to the village.",
@@ -147,6 +150,35 @@ const placesData = [
 
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Saint+Neophytos+Monastery+Paphos+Cyprus",
+
+        phone: "",
+
+        website: ""
+    },
+
+    {
+        name: "Paphos Castle",
+
+        category: "historic",
+
+        badge: "Historic Landmark",
+
+        location: "Paphos Harbour",
+
+        subtitle: "Medieval Castle",
+
+        typeIcon: "landmark",
+
+        distance: "25 min",
+
+        description:
+            "A historic medieval castle located at the edge of Paphos Harbour. It is one of the city's most recognisable landmarks and a beautiful stop while exploring the harbour and promenade.",
+
+        image:
+            "images/places/castle.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Paphos+Castle+Cyprus",
 
         phone: "",
 

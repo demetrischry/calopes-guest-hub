@@ -17,7 +17,7 @@ const beachesData = [
 
         typeIcon: "waves",
 
-        distance: "25 min",
+        distance: "35 min",
 
         description:
             "One of the most popular beaches in Paphos, offering golden sand, calm waters and excellent facilities. A perfect choice for a relaxing beach day with family or friends.",
@@ -31,6 +31,36 @@ const beachesData = [
         phone: "",
 
         website: ""
+
+    },
+
+    {
+    name: "Venus Beach",
+
+    category: "relaxed",
+
+    badge: "Easy Beach Day",
+
+    location: "Paphos",
+
+    subtitle: "Organised Beach",
+
+    typeIcon: "waves",
+
+    distance: "25 min",
+
+    description:
+        "A convenient organised beach in Paphos with easy access, clear water and nearby hotels, cafés and restaurants. A good choice for a relaxed beach day close to the city.",
+
+    image:
+        "images/beaches/venus.jpg",
+
+    mapsLink:
+        "https://www.google.com/maps/search/?api=1&query=Venus+Beach+Paphos+Cyprus",
+
+    phone: "",
+
+    website: ""
     },
 
     {
@@ -46,7 +76,7 @@ const beachesData = [
 
         typeIcon: "waves",
 
-        distance: "25 min",
+        distance: "27 min",
 
         description:
             "A quieter beach with a peaceful atmosphere, ideal for guests looking to unwind away from the busiest tourist areas while enjoying the beautiful Mediterranean coast.",

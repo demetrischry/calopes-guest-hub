@@ -86,7 +86,7 @@ const usefulData = {
                 "images/useful/lidl.jpg",
 
             mapsLink:
-                "https://www.google.com/maps/place/Lidl/@34.7930574,32.436439,15.78z/data=!4m6!3m5!1s0x14e7066ded12548b:0x7ce5da7d76a5ffae!8m2!3d34.79074!4d32.43418!16s%2Fg%2F11cm_gzrxp?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
+                "https://www.google.com/maps/place/Lidl/@34.7930574,32.436439,15.78z/data=!4m6!3m5!1s0x14e7066ded12548b:0x7ce5da7d76a5ffae!8m2!3d34.79074!4d32.43418!16s%2Fg%2F11cm_gzrxp?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D   ",
             phone: "",
 
             website: ""

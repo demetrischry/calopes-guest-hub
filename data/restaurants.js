@@ -17,7 +17,8 @@ const restaurantsData = [
 
         typeIcon: "utensils",
 
-        distance: "2 min",
+        distance: "5 min walk",
+        distanceIcon: "footprints",
 
         description:
             "A welcoming village tavern where you can enjoy authentic Greek and Cypriot flavours just moments from Calopes Suites.",
@@ -28,7 +29,7 @@ const restaurantsData = [
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Monastiraki+Tavern+Kallepeia+Cyprus",
 
-        phone: "",
+        phone: "+35799844343",
 
         website: ""
     },
@@ -76,7 +77,8 @@ const restaurantsData = [
 
         typeIcon: "utensils",
 
-        distance: "2 min",
+        distance: "3 min walk",
+        distanceIcon: "footprints",
 
         description:
             "A family-run tavern where traditional recipes and genuine Cypriot hospitality come together in the heart of Kallepeia.",
@@ -87,7 +89,7 @@ const restaurantsData = [
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Taverna+Tou+Christaki+Kallepeia+Cyprus",
 
-        phone: "",
+        phone: "+35799677744",
 
         website: ""
     },
@@ -180,7 +182,7 @@ const restaurantsData = [
         mapsLink:
             "https://www.google.com/maps/search/?api=1&query=Aristo%27s+Tavern+Tsada+Cyprus",
 
-        phone: "",
+        phone: "+35799802778",
 
         website: ""
     },
@@ -242,6 +244,35 @@ const restaurantsData = [
 
         phone:
             "+35799330781",
+
+        website: ""
+    },
+
+        {
+        name: "Koutourou Ouzeri",
+
+        category: "cypriot-taverns",
+
+        badge: "Chef's Choice",
+
+        location: "Paphos",
+
+        subtitle: "Modern Cypriot Cuisine",
+
+        typeIcon: "utensils",
+
+        distance: "20 min",
+
+        description:
+            "A popular traditional ouzeri serving authentic Cypriot meze and local specialities in a warm and friendly atmosphere.",
+
+        image:
+            "images/restaurants/koutourou.jpg",
+
+        mapsLink:
+            "https://www.google.com/maps/search/?api=1&query=Koutourou+Ouzeri+Paphos",
+
+        phone: "+35770001358",
 
         website: ""
     },

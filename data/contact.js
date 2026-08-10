@@ -4,7 +4,7 @@ const contactData = {
 
     phone: siteData.phone,
 
-    whatsapp: siteData.phone,
+    whatsapp: siteData.whatsapp,
 
     email: siteData.email,
 
