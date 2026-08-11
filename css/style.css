@@ -133,33 +133,10 @@ button {
 }
 
 
-
 #page-container {
     margin-top: 20px;
 }
 
-#back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin-bottom: 20px;
-    margin: 0 0 24px;
-    padding: 10px 18px;
-    border: 0;
-    border-radius: 12px;
-    background: var(--primary-color);
-    color: #FFFFFF;
-    cursor: pointer;
-}
-
-#back-button:hover {
-    opacity: 0.9;
-}
-
-#back-button svg {
-    width: 18px;
-    height: 18px;
-}
 
 #back-button:focus-visible,
 .contact-button:focus-visible,
@@ -188,17 +165,16 @@ button {
     box-shadow: var(--shadow);
     cursor: pointer;
 
-        transition:
-        transform .18s ease,
-        box-shadow .18s ease,
-        background-color .18s ease;
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease;
 }
 
 .menu-card:active {
     transform: scale(.98);
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,.08);
+        0 7px 18px rgba(52, 43, 36, 0.09);
 }
 
 .menu-card:hover {
@@ -274,79 +250,10 @@ button {
 }
 
 /* ==========================
-   SHARED PAGE INTRO
+   INNER PAGE BASE
 ========================== */
 .restaurants-page {
     padding: 24px;
-}
-
-.page-intro {
-    margin-top: 18px;
-    margin-bottom: 32px;
-}
-
-.page-eyebrow {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--primary-color);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-}
-
-.page-intro h2 {
-    margin: 0 0 12px;
-    font-size: 36px;
-    line-height: 1.1;
-}
-
-.page-intro p {
-    max-width: 100%;
-    margin: 0;
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-.restaurant-category {
-    margin-top: 42px;
-}
-
-.category-heading {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 18px;
-}
-
-.category-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    background: var(--soft-surface);
-    color: var(--primary-color);
-    border-radius: 14px;
-}
-
-.category-icon svg {
-    width: 21px;
-    height: 21px;
-}
-
-.category-heading h3 {
-    margin: 0 0 4px;
-    font-size: 22px;
-}
-
-.category-heading p {
-    margin: 0;
-    color: var(--text-light);
-    font-size: 13px;
-    line-height: 1.5;
 }
 
 /* ==========================
@@ -428,48 +335,62 @@ button {
     flex-shrink: 0;
 }
 
-/* Rating and distance: compact pills on the right */
-.restaurant-rating,
-.restaurant-distance {
+/* Rating and distance: compact pills */
+.restaurant-rating {
     position: absolute;
+    top: 14px;
     right: 14px;
     left: auto;
     z-index: 5;
+
     display: inline-flex;
     align-items: center;
     gap: 6px;
+
     width: auto;
     max-width: max-content;
     padding: 8px 12px;
+
     background: rgba(255, 255, 255, 0.96);
     color: #2D2925;
+
     border-radius: 999px;
+
     font-size: 13px;
     font-weight: 700;
     line-height: 1;
     white-space: nowrap;
+
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-.restaurant-rating {
-    top: 14px;
+.restaurant-rating svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #F4B400;
+    fill: currentColor;
 }
 
 .restaurant-distance {
     position: absolute;
-
     top: 16px;
     right: 16px;
+    left: auto;
+    z-index: 5;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
 
+    width: auto;
+    max-width: max-content;
     padding: 8px 12px;
 
-    background: rgba(255,255,255,.96);
+    background: rgba(255, 255, 255, 0.96);
     color: var(--text-color);
 
     border-radius: 999px;
@@ -477,26 +398,19 @@ button {
     font-size: 13px;
     font-weight: 700;
     line-height: 1;
+    white-space: nowrap;
 
-    box-shadow: 0 6px 16px rgba(0,0,0,.15);
-
-    z-index: 5;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
-.restaurant-distance svg {
 
+.restaurant-distance svg {
     width: 15px;
     height: 15px;
-
     flex-shrink: 0;
-
     position: relative;
     top: -1px;
-
-}
-
-.restaurant-rating svg {
-    color: #F4B400;
-    fill: currentColor;
 }
 
 .restaurant-content {
@@ -1003,18 +917,14 @@ button {
         padding: 7px 9px;
     }
 
-    .restaurant-rating,
-    .restaurant-distance {
+    .restaurant-rating {
+        top: 10px;
         right: 10px;
         padding: 7px 9px;
     }
 
-    .restaurant-rating {
-        top: 10px;
-    }
-
     .restaurant-distance {
-        top: 50px;
+        padding: 7px 9px;
     }
 }
 
@@ -2124,6 +2034,7 @@ button {
 .page-intro {
     position: relative;
 
+    margin-top: 18px;
     margin-bottom: 42px;
     padding-bottom: 28px;
 }
