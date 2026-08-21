@@ -192,7 +192,7 @@ const restaurantsData = [
 
         category: "cypriot-taverns",
 
-        badge: "Village Cuisine",
+        badge: "Village Tavern",
 
         location: "Letymbou",
 
@@ -223,7 +223,7 @@ const restaurantsData = [
 
         category: "cypriot-taverns",
 
-        badge: "Rustic Dining",
+        badge: "Traditional Cypriot",
 
         location: "Tsada",
 
@@ -253,7 +253,7 @@ const restaurantsData = [
 
         category: "cypriot-taverns",
 
-        badge: "Chef's Choice",
+        badge: "Modern Cypriot",
 
         location: "Paphos",
 
